@@ -1,0 +1,741 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;900&display=swap");
+/* General Styles */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    font-family: "Montserrat", sans-serif;
+    overflow-x: hidden;
+    font-size: 1rem;
+    background-color: #f0f0f0;
+}
+
+.background-image {
+    background-size: cover;
+    background-position: center;
+    height: 100%;
+    width: 100%;
+    position: relative;
+    color: white;
+}
+
+/* Hero Image */
+.hero {
+    background-image: url("/assets/frontend/img-4-2000x2000.png");
+    background-size: cover;
+    height: 55rem;
+    width: 55rem;
+    position: absolute;
+    top: -215px;
+    right: -250px;
+    z-index: 1;
+}
+
+/* Navbar */
+.navbar-brand {
+    font-size: 1.8rem;
+    margin-left: -60px;
+    color: #000000;
+}
+
+.navbar {
+    padding: auto;
+    display: flex;
+    align-items: center;
+    margin-left: 20px;
+}
+
+.navbar-nav .nav-link {
+    font-weight: bold;
+    margin-right: 10px;
+    margin-top: 10px;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #ddd;
+}
+
+/* Content */
+.content {
+    margin-top: 240px;
+    margin-left: -65px;
+    max-width: 665px;
+    transform: translateY(-50%);
+    padding: 0 20px;
+    color: #000000;
+}
+
+.content h1 {
+    font-size: 3em;
+    font-weight: 300;
+}
+
+.black-line {
+    border: 0;
+    height: 2px;
+    border-top: 3px solid #000000;
+    background-color: #000000;
+    width: 13%; /* Width relative to parent container */
+    margin: 20px 0;
+    position: relative;
+    left: -275px; /* Centered by default */
+}
+
+/* Black line for smaller sections */
+.black-line1 {
+    border: 0;
+    height: 2px;
+    border-top: 3px solid #000;
+    background-color: #000;
+    width: 9%; /* Width relative to parent container */
+    margin: 10px auto;
+    position: relative;
+    top: -20px;
+}
+
+/* Responsive Adjustments */
+
+/* Tablets and smaller desktops */
+@media (max-width: 992px) {
+    .black-line {
+        width: 15%; /* Increase width slightly */
+        left: 0; /* Remove left offset for centering */
+    }
+
+    .black-line1 {
+        width: 11%; /* Slightly increase width */
+        top: -15px; /* Adjust vertical position */
+    }
+}
+
+/* Mobile devices */
+@media (max-width: 768px) {
+    .black-line {
+        width: 25%; /* Wider on smaller screens */
+        left: 0; /* Centered on mobile */
+    }
+
+    .black-line1 {
+        width: 20%; /* Increase width */
+        top: -10px; /* Adjust vertical position */
+    }
+}
+
+/* Extra small devices (phones) */
+@media (max-width: 576px) {
+    .black-line {
+        width: 30%; /* Full-width style for mobile */
+        left: 0; /* Centered */
+    }
+
+    .black-line1 {
+        width: 25%; /* Increase width on phones */
+        top: -5px; /* Adjust vertical position */
+    }
+}
+
+
+.btn-black {
+    display: inline-block;
+    padding: 15px 30px;
+    font-size: 18px;
+    font-weight: 600;
+    color: white;
+    background-color: black;
+    border: none;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-black:hover {
+    background-color: #333;
+}
+
+/* About Section */
+.about p {
+    width: 666px;
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: center;
+    line-height: 1.6em;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Responsive Styles */
+@media (max-width: 1200px) {
+    .hero {
+        top: -150px;
+        right: -200px;
+        height: 45rem;
+        width: 45rem;
+    }
+}
+
+@media (max-width: 992px) {
+    .navbar-brand {
+        margin-left: 0;
+        font-size: 1.5rem;
+    }
+
+    .hero {
+        top: -100px;
+        right: -150px;
+        height: 35rem;
+        width: 35rem;
+    }
+
+    .content {
+        margin-left: 0;
+        text-align: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero {
+        top: -75px;
+        right: -100px;
+        height: 30rem;
+        width: 30rem;
+    }
+
+    .content h1 {
+        font-size: 2.5em;
+    }
+
+    .black-line {
+        width: 10%;
+    }
+
+    .btn-black {
+        width: 100%;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero {
+        top: -50px;
+        right: -50px;
+        height: 20rem;
+        width: 20rem;
+    }
+
+
+    .content h1 {
+        font-size: 2em;
+    }
+
+    .black-line {
+        width: 8%;
+    }
+
+    .btn-black {
+        padding: 10px 20px;
+        font-size: 16px;
+    }
+
+    .about p {
+        width: 100%;
+        padding: 10px;
+    }
+}
+
+/* BAGIAN TENTANG */
+.about {
+    background-color: white;
+    padding: 20px; /* Increased padding for better spacing */
+    line-height: 1.6;
+    margin-top: 0;
+}
+
+.about h3 {
+    margin-top: 55px;
+    font-size: 2rem; /* Adjusted font size for responsiveness */
+}
+
+.about span {
+    display: block;
+    margin-bottom: 1em;
+}
+
+.about p {
+    width: 100%; /* Full width by default */
+    max-width: 900px; /* Limit maximum width */
+    margin: 0 auto;
+    text-align: center;
+    line-height: 1.6em;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.black-line, .black-line1 {
+    border: 0;
+    height: 2px;
+    width: 60px;
+    border-top: 3px solid black;
+    margin: 20px auto;
+    background-color: black;
+}
+
+/* Responsive Adjustments */
+
+/* Larger devices (desktops, etc.) */
+@media (min-width: 992px) {
+    .about p {
+        max-width: 800px;
+    }
+}
+
+/* Tablets and smaller desktops */
+@media (max-width: 992px) {
+    .about h3 {
+        font-size: 1.8rem; /* Slightly smaller heading */
+    }
+
+    .about p {
+        max-width: 700px;
+    }
+}
+
+/* Mobile devices */
+@media (max-width: 768px) {
+    .about h3 {
+        font-size: 1.5rem; /* Smaller heading on mobile */
+    }
+
+    .about p {
+        max-width: 600px; /* Narrower content width */
+        padding: 15px;
+    }
+
+    .black-line, .black-line1 {
+        width: 50px; /* Smaller black line */
+    }
+}
+
+/* Extra small devices (phones) */
+@media (max-width: 576px) {
+    .about h3 {
+        font-size: 1.3rem;
+    }
+
+    .about p {
+        max-width: 100%; /* Full width on small screens */
+        padding: 10px;
+    }
+
+    .black-line, .black-line1 {
+        width: 40px; /* Even smaller black line */
+    }
+}
+
+/* BAGIAN GALERY */
+.gallery {
+    background-image: url("/assets/frontend/monika-grabkowska-P1aohbiT-EY-unsplash.jpg");
+    background-color: rgba(0, 0, 0, 0.5); /* Overlay */
+    background-blend-mode: darken; /* Darken image */
+    width: 100%;
+    padding: 5rem;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 13px;
+    align-items: center;
+}
+
+.card {
+    padding: 20px;
+    text-align: center;
+    border-radius: 15px;
+    max-width: 270px;
+    min-height: 300px;
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 220px; /* Flex-grow and flex-basis */
+    background-color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.card-image {
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    margin-top: -140px;
+    display: block;
+}
+
+.card1 {
+    font-family: Arial, sans-serif;
+}
+
+p {
+    font-size: 0.9rem;
+}
+
+/* Responsive Styles */
+@media (max-width: 1200px) {
+    .gallery {
+        padding: 3rem;
+    }
+
+    .card {
+        max-width: 250px;
+    }
+}
+
+@media (max-width: 992px) {
+    .gallery {
+        padding: 2rem;
+        gap: 10px;
+    }
+
+    .card {
+        max-width: 230px;
+        margin-top: 80px;
+    }
+
+    .card-image {
+        width: 200px;
+        height: 200px;
+    }
+}
+
+@media (max-width: 768px) {
+    .card {
+        max-width: 200px;
+    }
+
+    .card-image {
+        width: 180px;
+        height: 180px;
+    }
+}
+
+@media (max-width: 576px) {
+    .gallery {
+        padding: 1rem;
+        gap: 8px;
+    }
+
+    .card {
+        max-width: 180px;
+        min-height: 280px;
+        margin-top: 60px;
+    }
+
+    .card-image {
+        width: 160px;
+        height: 160px;
+        margin-top: -100px;
+    }
+
+    p {
+        font-size: 0.8rem;
+    }
+}
+
+/* BERITA */
+.news {
+    display: grid;
+    place-items: center; /* Menengahkan item secara horizontal dan vertikal */
+    /* height: 100vh; Mengatur tinggi kontainer ke 100% viewport */
+   }
+
+.container-news{
+    padding-left: 2rem;
+    padding-right: 2rem;
+    margin-top: 1rem;
+}
+
+.aspect-ratio {
+    width: 100%; /* Full width */
+    height: 0%;
+    padding-bottom: 66.67%; /* 3:2 aspect ratio */
+    position: relative;
+    overflow: hidden; /* Hide overflow */
+}
+
+.aspect-ratio img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%; /* Cover the full width */
+    height: auto; /* Maintain aspect ratio */
+     min-height: 100%; /*Ensure it fills the container height */
+    transform: translate(-50%, -50%); /* Center the image */
+}
+
+
+.news-card {
+    border: none;
+    border-radius: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Initial box shadow */
+    overflow: hidden; /* Agar konten tidak melampaui sudut bulat */
+    transition: box-shadow 0.3s; /* Efek transisi saat hover */
+    display: flex;
+    flex-direction: column; /* Pastikan konten dalam kolom disusun secara vertikal */
+    justify-content: space-between; /* Memastikan ruang terdistribusi merata */
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    background-color: white;
+}
+
+.news-card-big {
+    border: none;
+    border-radius: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Initial box shadow */
+    overflow: hidden; /* Agar konten tidak melampaui sudut bulat */
+    transition: box-shadow 0.3s; /* Efek transisi saat hover */
+    display: flex;
+    flex-direction: column; /* Pastikan konten dalam kolom disusun secara vertikal */
+    justify-content: space-between; /* Memastikan ruang terdistribusi merata */
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    background-color: white;
+    min-height: 97%; /* Atau tentukan tinggi minimal sesuai kebutuhan */
+    flex-grow: 1; /* Agar card bisa berkembang secara fleksibel */
+}
+.news-card-big:hover {
+    transform: translateY(-5px); /* Lift the card slightly */
+    background-color: rgba(255, 255, 255, 0.8); /* Change background on hover */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Darker shadow on hover */
+}
+
+.news-card:hover {
+    transform: translateY(-5px); /* Lift the card slightly */
+    background-color: rgba(255, 255, 255, 0.8); /* Change background on hover */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Darker shadow on hover */
+}
+
+.news-img-top {
+    border-top-left-radius: 10px; /* Sudut kiri atas bulat */
+    border-top-right-radius: 10px; /* Sudut kanan atas bulat */
+    object-fit: cover;
+    display: block;
+}
+
+.news-body {
+    padding: 20px;
+}
+
+.news-title {
+    font-weight: bold;
+}
+
+.news-text {
+    color: #6c757d;
+    margin-bottom: auto;
+}
+
+.news {
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.read-more {
+    color: #f39c12;
+    font-weight: bold;
+    position: relative;
+    display: inline-block;
+    text-decoration: none;
+    margin-top: auto;
+    margin-left: -14px;
+}
+
+.read-more::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    width: 0;
+    height: 2px; /* Ketebalan garis bawah */
+    background-color: #f39c12; /* Ganti dengan warna yang diinginkan */
+    transition: width 0.3s ease, left 0.3s ease;
+}
+
+.read-more:hover::after {
+    width: 100%;
+    left: 0;
+}
+
+
+/* Galery */
+.galeri-title {
+    text-align: center;
+    margin: 50px 0 50px 0;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.galeri {
+    justify-content: center;
+    background-color: white;
+    gap: 10px;
+    margin-top: 10px;
+    border-radius: 0px;
+}
+
+.galeri img {
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+    margin-bottom: 10px;
+}
+
+.image-container {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    border-radius: 15px;
+    padding-bottom: 100%;
+    background-color: #f8f8f8;
+}
+
+.image-container img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 500px;
+    height: 100%;
+    object-fit: cover;
+    transform: translate(-50%, -50%);
+}
+
+.image-shadow {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: box-shadow 0.3s;
+}
+
+.image-shadow:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.galeri-btn {
+    display: block;
+    width: 250px; /* Set the width as needed */
+    margin: 30px auto; /* Center the button */
+    padding: 10px;
+    background-color: black;
+    color: white;
+    text-align: center;
+    border: none;
+    text-decoration: none; /* Remove underline */
+    transition: background-color 0.3s; /* Smooth hover effect */
+    font-weight: 500;
+}
+
+.galeri-btn:hover {
+    background-color: darkgray; /* Change on hover */
+}
+.image-container {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    border-radius: 15px;
+    padding-bottom: 100%;
+    background-color: #f8f8f8;
+    transition: transform 0.3s ease-in-out; /* Menambahkan transisi untuk pergerakan */
+}
+
+.image-container img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: translate(-50%, -50%);
+    transition: transform 0.3s ease-in-out; /* Menambahkan transisi untuk gambar */
+}
+.image-container:hover img {
+    transform: translate(-50%, -50%) scale(1.05); /* Membesarkan gambar sedikit */
+}
+.image-shadow {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: box-shadow 0.3s, transform 0.3s ease-in-out; /* Tambahkan transisi untuk box shadow */
+}
+.image-shadow:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    transform: scale(1.02); /* Memperbesar card sedikit saat hover */
+}
+
+/* FOOTER */
+.body-footer {
+    background-color: #111;
+    color: #fff;
+    font-family: 'Sans Serif', sans-serif;
+}
+.footer {
+    padding: 40px 0;
+}
+.footer h5 {
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+.footer p {
+    color: #b5b5b5;
+}
+.footer a {
+    color: #fff;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 10px;
+}
+.footer a:hover {
+    text-decoration: underline;
+}
+.social-icons {
+    text-align: left;
+}
+.social-icons a {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    margin-right: 10px;
+    text-align: center;
+    border-radius: 50%;
+    background-color: #333;
+    color: #fff;
+}
+.social-icons a:hover {
+    background-color: #555;
+}
+.social-icons .fa-facebook {
+    background-color: #3b5998;
+}
+.social-icons .fa-twitter {
+    background-color: #1da1f2;
+}
+.footer-bottom {
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 20px;
+}
+.contact-info li {
+    margin-bottom: 10px;
+}
+.contact-info i {
+    margin-right: 10px;
+}
+
+
+
+
+
+

@@ -1,0 +1,987 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;900&display=swap");
+body,
+html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    font-family: "Montserrat", sans-serif;
+    }
+
+
+    .ms-auto {
+        margin-right: -50px;
+    }
+
+    .background-image-other {
+        background-size: 110%;
+        background-image: url("/assets/frontend/Group 70@2x.png");
+        background-position: top center;
+        height: 700px;
+        width: 100%;
+        position: relative;
+        color: white;
+        overflow: hidden;
+        background-repeat: no-repeat;
+        z-index: 0;
+    }
+
+    .navbar {
+        display: flex;
+        margin-top: 30px;
+        align-items: center;
+    }
+
+    .navbar-nav .nav-link {
+        color: white;
+        /* Mengubah warna tautan menjadi putih */
+        margin-right: 0.7rem;
+    }
+
+    .navbar .navbar-brand {
+        font-size: 1.5rem;
+        font-weight: 700;
+        margin-left: -20px;
+        text-decoration: none;
+        /* Menghapus garis bawah */
+        color: white;
+        /* Warna normal */
+        transition: color 0.3s ease;
+        /* Menambahkan transisi untuk perubahan warna */
+    }
+
+    .navbar .navbar-brand:hover,
+    .navbar-nav .nav-link:hover {
+        color: #ccc;
+        /* Pastikan hover tetap berwarna putih */
+        transition: color 0.3s ease;
+        /* Menambahkan transisi untuk perubahan warna */
+    }
+
+
+    .content-title {
+        position: absolute;
+        top: 50%;
+        left: 50px; /* Space from the left */
+        right: 10%;
+        max-width: 655px;
+        transform: translateY(-50%); /* Centers vertically */
+        padding: 0 20px;
+        color: white;
+        margin-top: -90px;
+        margin-left: -13px;
+    }
+
+    .content-title h1 {
+        font-size: 3.1rem;
+        font-weight: bold;
+        margin: 0;
+        color: white;
+        text-align: left; /* Align text to the left */
+        /* Optionally add padding or margin for spacing */
+    }
+
+/* slider */
+.slider {
+background-color: #f4f4f4;
+padding: 100px 0;
+margin-top: -190px;
+margin-bottom: 60px;
+}
+
+.content {
+max-width: 1130px;
+margin: 0 auto;
+width: 100%;
+border-radius: 30px;
+}
+
+.carousel-item img {
+width: 100%;
+max-height: 450px;
+border-radius: 30px;
+object-fit: cover;
+margin-bottom: 20px;
+margin-right: 20px;
+}
+
+/* Custom carousel controls */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+background-color: white;
+border-radius: 50%;
+box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* Menambahkan efek bayangan */
+width: 50px;
+height: 50px;
+display: flex;
+align-items: center;
+justify-content: center;
+position: absolute;
+top: 50%;
+transform: translateY(-50%);
+z-index: 2;
+}
+
+.carousel-control-prev {
+left: -90px;
+}
+
+.carousel-control-next {
+right: -90px;
+}
+
+.carousel-control-prev-icon i,
+.carousel-control-next-icon i {
+font-size: 1.5rem;
+color: black;
+}
+
+/* Fully opaque controls */
+.carousel-control-prev,
+.carousel-control-next {
+opacity: 1;
+pointer-events: auto;
+}
+
+/* PHOTO */
+.photo {
+    background-color: white;
+    padding: 50px 0; /* Padding untuk memberi jarak dari elemen lainnya */
+}
+
+.container-img {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Mengatur agar gambar tetap di tengah secara horizontal */
+    text-align: center; /* Memastikan konten tetap rapi di tengah */
+    margin-top: 80px;
+    margin-bottom: 80px;
+}
+
+.rounded-img {
+    border-radius: 20px;
+    width: 275px;
+    height: 275px;
+    object-fit: cover;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+    margin: 8px; /* Jarak antar gambar */
+}
+
+.rounded-img img {
+    width: 100%; /* Lebar gambar mengikuti container */
+    height: 100%; /* Tinggi gambar mengikuti container */
+    object-fit: cover; /* Gambar akan menutupi seluruh area tanpa distorsi */
+}
+
+.row {
+    justify-content: center; /* Mengatur gambar tetap rapi di tengah */
+}
+
+/* Responsive Media Queries */
+@media (max-width: 1024px) {
+    .rounded-img {
+        width: 220px; /* Menyesuaikan ukuran gambar untuk layar lebih kecil */
+        height: 220px;
+        margin: 6px; /* Kurangi margin untuk lebih banyak ruang */
+    }
+
+    .container-img {
+        margin-top: 50px;
+        margin-bottom: 50px; /* Kurangi margin pada layar tablet */
+    }
+}
+
+@media (max-width: 768px) {
+    .rounded-img {
+        width: 180px; /* Lebar gambar lebih kecil untuk tablet */
+        height: 180px;
+        margin: 5px; /* Kurangi margin antar gambar */
+    }
+
+    .container-img {
+        margin-top: 40px;
+        margin-bottom: 40px;
+    }
+}
+
+@media (max-width: 480px) {
+    .rounded-img {
+        width: 140px; /* Ukuran gambar lebih kecil pada layar ponsel */
+        height: 140px;
+        margin: 4px;
+    }
+
+    .container-img {
+        margin-top: 30px;
+        margin-bottom: 30px;
+    }
+}
+
+
+/*  KONTAK */
+
+/* Contact Form Section */
+.contact-form-section {
+    padding: 50px;
+    background-color: #ffffff;
+    margin-top: -150px;
+}
+
+/* Input and textarea fields */
+.contact-form-section input,
+.contact-form-section textarea {
+    width: 100%;
+    padding: 25px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    border: 1px solid #000000;
+}
+
+/* Adjust the height of the textarea */
+.contact-form-section textarea {
+    height: 268px;
+}
+
+/* Submit button styling */
+.submit-btn {
+    display: block;
+    width: 100%;
+    background-color: #000;
+    color: #fff;
+    border: none;
+    padding: 17px;
+    text-align: center;
+    font-size: 13px;
+    font-weight: bold;
+    border-radius: 11px;
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+}
+
+.submit-btn:hover {
+    background-color: #333;
+}
+
+/* Info Section Styling */
+.info-section {
+    display: flex;
+    justify-content: space-between;
+    padding: 50px;
+    background-color: #000;
+    color: white;
+}
+
+.info-section div {
+    text-align: center;
+}
+
+.info-section p {
+    font-size: 16px;
+    margin: 0;
+}
+
+/* Media Queries for Responsiveness */
+
+/* Medium screens (tablets and smaller laptops) */
+@media (max-width: 992px) {
+    .contact-form-section {
+        padding: 40px; /* Reduce padding for medium screens */
+        margin-top: -100px; /* Adjust margin for better alignment */
+    }
+
+    .submit-btn {
+        font-size: 12px; /* Adjust button font size */
+        padding: 15px; /* Reduce padding for the button */
+    }
+
+    .info-section {
+        flex-direction: column; /* Stack the info sections vertically */
+        padding: 40px;
+    }
+
+    .info-section div {
+        margin-bottom: 20px; /* Add space between stacked info sections */
+    }
+}
+
+/* Small screens (mobile devices) */
+@media (max-width: 768px) {
+    .contact-form-section {
+        padding: 30px; /* Reduce padding further for mobile */
+        margin-top: -80px;
+    }
+
+    .contact-form-section input,
+    .contact-form-section textarea {
+        padding: 20px; /* Adjust padding for input fields */
+    }
+
+    .submit-btn {
+        font-size: 11px; /* Smaller button text on mobile */
+        padding: 14px;
+    }
+
+    .info-section {
+        padding: 30px; /* Adjust padding for mobile */
+    }
+
+    .info-section p {
+        font-size: 14px; /* Reduce text size in info section */
+    }
+}
+
+/* Very small screens (small mobile devices) */
+@media (max-width: 576px) {
+    .contact-form-section {
+        padding: 20px; /* Minimal padding on very small screens */
+        margin-top: -60px;
+    }
+
+    .contact-form-section input,
+    .contact-form-section textarea {
+        padding: 15px; /* Reduce input field padding */
+    }
+
+    .submit-btn {
+        font-size: 10px; /* Further reduce button font size */
+        padding: 12px;
+    }
+
+    .info-section {
+        padding: 20px; /* Smaller padding for very small screens */
+    }
+
+    .info-section p {
+        font-size: 13px; /* Smaller text for very small screens */
+    }
+}
+
+
+    /* ICONS */
+.body-kontak {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto; /* Adjusted to auto for better flexibility */
+    padding: 20px 0;
+    background-color: #fff;
+}
+
+.kontak-info {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap; /* Wrap items on smaller screens */
+    width: 80%;
+    margin: 0 auto;
+}
+
+.kontak-item {
+    text-align: center;
+    flex: 1 1 250px; /* Flex with minimum width */
+    margin: 20px;
+}
+
+.kontak-item i {
+    font-size: 40px;
+    color: #fff;
+    background-color: #000;
+    border-radius: 50%;
+    padding: 20px;
+    margin-bottom: 10px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 80px;
+    height: 80px;
+}
+
+.kontak-item h3 {
+    margin: 10px 0 5px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.kontak-item p {
+    margin: 0;
+    font-size: 16px;
+    color: #333;
+}
+
+/* Responsive Styling for Tablets */
+@media (max-width: 768px) {
+    .kontak-info {
+        width: 90%;
+    }
+
+    .kontak-item i {
+        width: 70px;
+        height: 70px;
+        font-size: 35px;
+    }
+
+    .kontak-item h3 {
+        font-size: 16px;
+    }
+
+    .kontak-item p {
+        font-size: 14px;
+    }
+}
+
+/* Responsive Styling for Mobile Devices */
+@media (max-width: 576px) {
+    .kontak-info {
+        flex-direction: column; /* Stack items vertically */
+        align-items: center;
+    }
+
+    .kontak-item {
+        margin: 15px 0;
+    }
+
+    .kontak-item i {
+        width: 60px;
+        height: 60px;
+        font-size: 30px;
+        padding: 15px;
+    }
+
+    .kontak-item h3 {
+        font-size: 14px;
+    }
+
+    .kontak-item p {
+        font-size: 12px;
+    }
+}
+
+.map {
+    margin-top: -10px;
+    margin-bottom: 50px;
+    display: flex;
+    justify-content: center;
+}
+
+#map {
+    height: 550px;
+    width: 100%; /* Make the map responsive to the container */
+    max-width: 1200px; /* Maximum width for large screens */
+    border-radius: 20px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adding a subtle shadow for better visuals */
+}
+
+/* Responsivitas agar ukuran peta tetap proporsional di layar kecil */
+@media (max-width: 1200px) {
+    #map {
+        width: 90%; /* Lebar peta di layar kecil */
+        height: 400px; /* Tinggi yang tetap proporsional */
+    }
+}
+
+/* Responsivitas untuk layar yang lebih kecil lagi */
+@media (max-width: 768px) {
+    #map {
+        width: 100%; /* Lebar penuh untuk layar sangat kecil */
+        height: 300px; /* Lebih kecil lagi untuk layar yang sangat sempit */
+    }
+}
+
+
+
+/* TENTANG */
+.tastyFood {
+    background-color: #f4f4f4;
+    padding: 20px;
+    margin-top: -350px;
+    margin-bottom: 20px;
+}
+
+.tasty-food-section {
+    display: flex;
+    max-width: 1100px;
+    margin: 250px auto;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.text-content {
+    max-width: 600px;
+    margin-left: -50px;
+}
+
+.text-content h3 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.text-content p {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    margin-bottom: 15px;
+}
+
+.image-content {
+    display: flex;
+    gap: 15px;
+    margin-right: -50px;
+}
+
+.image-content img {
+    width: 275px;
+    height: 375px;
+    border-radius: 15px;
+    object-fit: cover;
+}
+
+/* PART 2 */
+.Tasty-Food {
+    background-color: #ffffff;
+    padding: 20px;
+    margin-top: -100px;
+}
+
+.food-section {
+    display: flex;
+    max-width: 1100px;
+    margin: 250px auto;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.content-text {
+    max-width: 600px;
+    margin-right: -50px;
+}
+
+.content-text h3 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.content-text p {
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-bottom: 15px;
+    font-weight: 510;
+}
+
+.content-image {
+    display: flex;
+    gap: 15px;
+    margin-left: -50px;
+}
+
+.content-image img {
+    width: 270px;
+    height: 270px;
+    border-radius: 15px;
+    object-fit: cover;
+}
+
+/* PART 3 */
+.Food {
+    background-color: #ffffff;
+    padding: 20px;
+    margin-top: -300px;
+}
+
+.tasty-section {
+    display: flex;
+    max-width: 1100px;
+    margin: 250px auto;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.content-text-misi {
+    max-width: 600px;
+    margin-left: -50px;
+}
+
+.content-text-misi h3 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.content-text-misi p {
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-bottom: 15px;
+    font-weight: 510;
+}
+
+.image-content-misi {
+    display: flex;
+    gap: 5px;
+    margin-right: -50px;
+}
+
+.image-content-misi img {
+    width: 600px;
+    height: 290px;
+    border-radius: 15px;
+    object-fit: cover;
+
+}
+
+/* Responsive Media Queries */
+@media (max-width: 768px) {
+    .tasty-food-section, .food-section, .tasty-section {
+        flex-direction: column;
+    }
+
+    .text-content, .content-text, .content-text-misi {
+        margin-left: 0;
+        margin-right: 0;
+        text-align: center;
+        max-width: 100%;
+    }
+
+    .image-content, .content-image, .image-content-misi {
+        margin: 0;
+    }
+
+    .image-content img, .content-image img, .image-content-misi img {
+        width: 100%;
+        height: auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .text-content h3, .content-text h3, .content-text-misi h3 {
+        font-size: 1.5rem;
+    }
+
+    .text-content p, .content-text p, .content-text-misi p {
+        font-size: 0.8rem;
+    }
+
+    .image-content img, .content-image img, .image-content-misi img {
+        width: 100%;
+        height: auto;
+    }
+}
+
+/* BERITA */
+.news-tasty {
+    background-color: #f4f4f4;
+    padding: 20px;
+    margin-top: -350px;
+}
+
+.news-tasty-section {
+    display: flex;
+    max-width: 1100px;
+    margin: 250px auto;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.text-content-news {
+    max-width: 600px;
+    margin-right: -50px;
+}
+
+.text-content-news h3 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.text-content-news p {
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-bottom: 15px;
+    font-weight: 510;
+}
+
+.image-content-news {
+    display: flex;
+    margin-left: -50px;
+}
+
+.image-content-news img {
+    width: 550px;
+    max-width: 100%;
+    height: 550px;
+    border-radius: 25px;
+    object-fit: cover;
+}
+
+/* BLACK LINE */
+.black-line {
+    border: 0;
+    height: 2px;
+    border-top: 3px solid #000000;
+    background-color: #000000;
+    width: 12%;
+    margin: 20px 0;
+    position: relative;
+    right: -5px;
+}
+
+/* BUTTON BLACK */
+.btn-black {
+    padding: 15px 30px;
+    font-size: 18px;
+    font-weight: 600;
+    color: white;
+    background-color: black;
+    border: none;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 300px;
+    display: flex;
+    justify-content: flex-start; /* Mengarahkan tombol ke sebelah kiri */
+    align-items: center;
+    font-weight: bold;
+    margin: 20px 0; /* Menghapus auto pada margin */
+}
+
+/* Hover state for button */
+.btn-black:hover {
+    background-color: #333;
+}
+
+/* Responsive Media Queries */
+@media (max-width: 768px) {
+    .news-tasty-section {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .text-content-news {
+        margin-right: 0;
+        text-align: center;
+        max-width: 100%;
+    }
+
+    .image-content-news {
+        margin-left: 0;
+        justify-content: center;
+    }
+
+    .image-content-news img {
+        width: 100%;
+        max-width: 450px;
+        height: auto;
+    }
+
+    .black-line {
+        width: 20%;
+    }
+
+    .btn-black {
+        width: auto; /* Menghapus lebar tetap */
+        max-width: 300px;
+        margin: 20px auto; /* Pastikan tombol di tengah */
+    }
+}
+
+@media (max-width: 480px) {
+    .text-content-news h3 {
+        font-size: 1.5rem;
+    }
+
+    .text-content-news p {
+        font-size: 0.9rem;
+    }
+
+    .image-content-news img {
+        width: 100%;
+        max-width: 300px;
+        height: auto;
+    }
+
+    .black-line {
+        width: 30%;
+    }
+
+    .btn-black {
+        width: auto;
+        max-width: 250px;
+        margin: 20px auto; /* Memastikan tombol di tengah pada layar kecil */
+    }
+}
+
+.news {
+    display: grid;
+    place-items: left; /* Menengahkan item secara horizontal dan vertikal */
+    margin-top: -200px;
+    background-color: white;
+   }
+
+.container-news{
+    padding-left: 6rem;
+    padding-right: 6rem;
+    margin-top: 1rem;
+}
+
+.aspect-ratio {
+    width: 100%; /* Full width */
+    height: 0;
+    padding-bottom: 66.67%; /* 3:2 aspect ratio */
+    position: relative;
+    overflow: hidden; /* Hide overflow */
+}
+
+.aspect-ratio img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%; /* Cover the full width */
+    height: auto; /* Maintain aspect ratio */
+    min-height: 100%; /* Ensure it fills the container height */
+    transform: translate(-50%, -50%); /* Center the image */
+}
+
+
+.news-card {
+    border: none;
+    border-radius: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Initial box shadow */
+    overflow: hidden; /* Agar konten tidak melampaui sudut bulat */
+    transition: box-shadow 0.3s; /* Efek transisi saat hover */
+    display: flex;
+    flex-direction: column; /* Pastikan konten dalam kolom disusun secara vertikal */
+    justify-content: space-between; /* Memastikan ruang terdistribusi merata */
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    background-color: white;
+
+}
+
+.news-card:hover {
+    transform: translateY(-5px); /* Lift the card slightly */
+    background-color: rgba(255, 255, 255, 0.8); /* Change background on hover */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Darker shadow on hover */
+}
+
+.news-img-top {
+    border-top-left-radius: 10px; /* Sudut kiri atas bulat */
+    border-top-right-radius: 10px; /* Sudut kanan atas bulat */
+    object-fit: cover;
+    display: block;
+}
+
+.news-body {
+    padding: 20px;
+}
+
+.news-title {
+    font-weight: bold;
+}
+
+.news-text {
+    color: #6c757d;
+    margin-bottom: auto;
+
+
+}
+
+.news {
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.read-more {
+    color: #f39c12;
+    font-weight: bold;
+    position: relative;
+    display: inline-block;
+    text-decoration: none;
+    margin-top: 50px;
+}
+
+.read-more::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    width: 0;
+    height: 2px; /* Ketebalan garis bawah */
+    background-color: #f39c12; /* Ganti dengan warna yang diinginkan */
+    transition: width 0.3s ease, left 0.3s ease;
+}
+
+.read-more:hover::after {
+    width: 100%;
+    left: 0;
+}
+
+/* LOAD */
+.loading {
+    text-align: center;
+    font-size: 18px;
+    padding: 20px;
+}
+
+/* FOOTER */
+.body-footer {
+    background-color: #111;
+    color: #fff;
+    font-family: 'Sans Serif', sans-serif;
+}
+.footer {
+    padding: 40px 0;
+}
+.footer h5 {
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+.footer p {
+    color: #b5b5b5;
+}
+.footer a {
+    color: #fff;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 10px;
+}
+.footer a:hover {
+    text-decoration: underline;
+}
+.social-icons {
+    text-align: left;
+}
+.social-icons a {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    margin-right: 10px;
+    text-align: center;
+    border-radius: 50%;
+    background-color: #333;
+    color: #fff;
+}
+.social-icons a:hover {
+    background-color: #555;
+}
+.social-icons .fa-facebook {
+    background-color: #3b5998;
+}
+.social-icons .fa-twitter {
+    background-color: #1da1f2;
+}
+.footer-bottom {
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 20px;
+}
+.contact-info li {
+    margin-bottom: 10px;
+}
+.contact-info i {
+    margin-right: 10px;
+}
+
+
+
