@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="{{ asset('assets/frontend/css/style2.css') }}">
 
      <!-- leaflet CSS -->
-     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
 
 </head>
 

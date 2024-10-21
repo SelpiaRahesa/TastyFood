@@ -1,21 +1,22 @@
 <?php
 
 namespace App\Http\Controllers;
-Use RealRashid\SweetAlert\Facades\Alert;
-use App\Models\Galery;
+
+use App\Models\Slider;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+Use RealRashid\SweetAlert\Facades\Alert;
 
-class GaleryController extends Controller
+class SliderController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $galery = Galery::latest()->paginate(0);
+        $slider = Slider::latest()->paginate(0);
         confirmDelete("Delete", "Are you sure you want to delete?");
-        return view('admin.galery.index', compact('galery'));
+        return view('admin.slider.index', compact('slider'));
     }
 
     /**
@@ -23,7 +24,7 @@ class GaleryController extends Controller
      */
     public function create()
     {
-        return view('admin.galery.create');
+        return view('admin.slider.create');
     }
 
     /**
@@ -36,20 +37,20 @@ class GaleryController extends Controller
 
         ]);
 
-        $galery = new Galery();
+        $slider = new Slider();
         // upload image
         $image = $request->file('image');
-        $image->storeAs('public/galeries', $image->hashName());
-        $galery->image = $image->hashName();
-        $galery->save();
+        $image->storeAs('public/sliders', $image->hashName());
+        $slider->image = $image->hashName();
+        $slider->save();
         Alert::success('Success', 'Data Added Successfully')->autoClose(1000);
-        return redirect()->route('galery.index');
+        return redirect()->route('slider.index');
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(Galery $galery)
+    public function show(Slider $slider)
     {
         //
     }
@@ -59,8 +60,8 @@ class GaleryController extends Controller
      */
     public function edit($id)
     {
-        $galery = Galery::findOrFail($id);
-        return view('admin.galery.edit', compact('galery'));
+        $slider = Slider::findOrFail($id);
+        return view('admin.slider.edit', compact('slider'));
 
         $slider->save();
         return redirect()->route('dataGuru.index');
@@ -75,14 +76,14 @@ class GaleryController extends Controller
             'image' => 'required|image|mimes:jpeg,jpg,png|max:5000',
 
         ]);
-        $galery = Galery::findOrFail($id);
+        $slider = Slider::findOrFail($id);
         // upload image
         $image = $request->file('image');
-        $image->storeAs('public/galeries', $image->hashName());
-        $galery->image = $image->hashName();
-        $galery->save();
+        $image->storeAs('public/sliders', $image->hashName());
+        $slider->image = $image->hashName();
+        $slider->save();
         Alert::success('Success', 'Data Updated Successfully')->autoClose(1000);
-        return redirect()->route('galery.index');
+        return redirect()->route('slider.index');
     }
 
     /**
@@ -90,10 +91,10 @@ class GaleryController extends Controller
      */
     public function destroy($id)
     {
-        $galery = Galery::findOrFail($id);
-        Storage::delete('public/galeries/' . $galery->image);
-        $galery->delete();
+        $slider = Slider::findOrFail($id);
+        Storage::delete('public/sliders/' . $slider->image);
+        $slider->delete ();
         Alert::success('Success', 'Data Succesfully Deleted')->autoClose(2000);
-        return redirect()->route('galery.index');
+        return redirect()->route('slider.index');
     }
 }

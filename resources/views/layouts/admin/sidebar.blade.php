@@ -35,6 +35,11 @@
                                         <p>Kontak</p>
                                     </a> </li>
                             </ul>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item"> <a href="{{route('slider.index')}}" class="nav-link"> <i class="nav-icon bi bi-play-circle"></i>
+                                        <p>Slider</p>
+                                    </a> </li>
+                            </ul>
                         </li>
                         <li class="nav-item"> <a href="{{route('message.index')}}" class="nav-link"> <i class="nav-icon bi bi-envelope-arrow-down"></i>
                                 <p>Message</p>

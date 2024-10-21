@@ -28,4 +28,5 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', IsAdmin::class]], fu
     Route::resource('tentang', App\Http\Controllers\TentangController::class);
     Route::resource('kontak', App\Http\Controllers\KontakController::class);
     Route::resource('message', App\Http\Controllers\MessageController::class);
+    Route::resource('slider', App\Http\Controllers\SliderController::class);
 });

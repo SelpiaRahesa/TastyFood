@@ -3,7 +3,6 @@
     <div class="content-title">
         <h1>TENTANG KAMI</h1>
     </div>
-
     <section class="tastyFood">
         @php $tentang = App\Models\Tentang::where('id', 7)->first(); @endphp
         @if ($tentang)

@@ -19,7 +19,7 @@
         <div class="content">
             <div class="black-line mb-3"></div>
             <h1 class="mb-3">HEALTHY</h1>
-            <h1 class="mb-3"><strong><b><b>TASTY FOOD</b></b></strong></h1>
+            <h1 class="mb-3"><strong><b><b>TATY FOOD</b></b></strong></h1>
             <p>
                 <span class="konten" style="line-height: 2;">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ornare, augue eu rutrum

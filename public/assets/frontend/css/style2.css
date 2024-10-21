@@ -25,39 +25,89 @@ html {
         background-repeat: no-repeat;
         z-index: 0;
     }
+    /* Responsivitas untuk layar lebih kecil dari 1200px */
+@media (max-width: 1200px) {
+    .background-image-other {
+        height: 600px; /* Sesuaikan tinggi untuk layar lebih kecil */
+    }
+}
 
+/* Responsivitas untuk layar lebih kecil dari 768px */
+@media (max-width: 768px) {
+    .background-image-other {
+        height: 400px; /* Tinggi lebih kecil untuk tablet */
+    }
+}
+
+/* Responsivitas untuk layar lebih kecil dari 480px */
+@media (max-width: 480px) {
+    .background-image-other {
+        height: 300px; /* Tinggi lebih kecil untuk ponsel */
+    }
+}
+
+.navbar {
+    display: flex;
+    margin-top: 30px;
+    align-items: center;
+    justify-content: space-between; /* Tambahkan ini agar elemen terdistribusi dengan baik */
+    flex-wrap: wrap; /* Agar item di dalam navbar dapat berpindah baris jika diperlukan */
+}
+
+.navbar-nav {
+    display: flex;
+    flex-grow: 1; /* Memungkinkan navbar-nav mengambil ruang yang tersisa */
+    justify-content: flex-end; /* Menempatkan item di sebelah kanan */
+}
+
+.navbar-nav .nav-link {
+    color: white; /* Mengubah warna tautan menjadi putih */
+    margin-right: 0.7rem;
+}
+
+.navbar .navbar-brand {
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-decoration: none; /* Menghapus garis bawah */
+    color: white; /* Warna normal */
+    transition: color 0.3s ease; /* Menambahkan transisi untuk perubahan warna */
+}
+
+.navbar .navbar-brand:hover,
+.navbar-nav .nav-link:hover {
+    color: #ccc; /* Pastikan hover tetap berwarna putih */
+    transition: color 0.3s ease; /* Menambahkan transisi untuk perubahan warna */
+}
+
+/* Responsivitas untuk layar yang lebih kecil dari 768px */
+@media (max-width: 768px) {
     .navbar {
-        display: flex;
-        margin-top: 30px;
-        align-items: center;
+        flex-direction: column; /* Mengubah arah menjadi kolom */
+        align-items: flex-start; /* Rata kiri */
+    }
+
+    .navbar-nav {
+        flex-direction: column; /* Mengubah arah menjadi kolom untuk menu */
+        width: 100%; /* Mengambil lebar penuh */
+        margin-top: 10px; /* Jarak antara navbar-brand dan navbar-nav */
     }
 
     .navbar-nav .nav-link {
-        color: white;
-        /* Mengubah warna tautan menjadi putih */
-        margin-right: 0.7rem;
+        margin-right: 0; /* Menghapus margin kanan */
+        margin-bottom: 10px; /* Tambahkan jarak antar tautan */
     }
+}
 
+/* Responsivitas untuk layar yang lebih kecil dari 480px */
+@media (max-width: 480px) {
     .navbar .navbar-brand {
-        font-size: 1.5rem;
-        font-weight: 700;
-        margin-left: -20px;
-        text-decoration: none;
-        /* Menghapus garis bawah */
-        color: white;
-        /* Warna normal */
-        transition: color 0.3s ease;
-        /* Menambahkan transisi untuk perubahan warna */
+        font-size: 1.3rem; /* Mengurangi ukuran font untuk tampilan ponsel */
     }
 
-    .navbar .navbar-brand:hover,
-    .navbar-nav .nav-link:hover {
-        color: #ccc;
-        /* Pastikan hover tetap berwarna putih */
-        transition: color 0.3s ease;
-        /* Menambahkan transisi untuk perubahan warna */
+    .navbar-nav .nav-link {
+        font-size: 0.9rem; /* Mengurangi ukuran font untuk tautan */
     }
-
+}
 
     .content-title {
         position: absolute;
@@ -80,68 +130,152 @@ html {
         text-align: left; /* Align text to the left */
         /* Optionally add padding or margin for spacing */
     }
+    .content-title {
+        position: absolute;
+        top: 50%;
+        left: 50px; /* Space from the left */
+        right: 10%;
+        max-width: 655px;
+        transform: translateY(-50%); /* Centers vertically */
+        padding: 0 20px;
+        color: white;
+        margin-top: -90px;
+        margin-left: -13px;
+    }
+
+    .content-title h1 {
+        font-size: 3.1rem; /* Ukuran font besar untuk desktop */
+        font-weight: bold;
+        margin: 0;
+        color: white;
+        text-align: left; /* Align text to the left */
+    }
+
+    /* Responsivitas untuk layar yang lebih kecil dari 768px */
+    @media (max-width: 768px) {
+        .content-title {
+            left: 20px; /* Mengurangi ruang dari kiri */
+            right: 20px; /* Mengurangi ruang dari kanan */
+            padding: 0 10px; /* Mengurangi padding */
+            margin-top: -70px; /* Menyesuaikan margin atas */
+            transform: translateY(-50%); /* Tetap menjaga pusat vertikal */
+        }
+
+        .content-title h1 {
+            font-size: 2.5rem; /* Mengurangi ukuran font untuk tampilan ponsel */
+            text-align: center; /* Rata tengah untuk ponsel */
+        }
+    }
+
+    /* Responsivitas untuk layar yang lebih kecil dari 480px */
+    @media (max-width: 480px) {
+        .content-title {
+            left: 10px; /* Ruang dari kiri lebih sedikit */
+            right: 10px; /* Ruang dari kanan lebih sedikit */
+            margin-top: -50px; /* Menyesuaikan margin atas lebih jauh */
+        }
+
+        .content-title h1 {
+            font-size: 2rem; /* Mengurangi ukuran font lebih kecil untuk tampilan sangat kecil */
+        }
+    }
+
 
 /* slider */
 .slider {
-background-color: #f4f4f4;
-padding: 100px 0;
-margin-top: -190px;
-margin-bottom: 60px;
+    background-color: #f4f4f4;
+    padding: 100px 0;
+    margin-top: -190px;
+    margin-bottom: 60px;
 }
 
 .content {
-max-width: 1130px;
-margin: 0 auto;
-width: 100%;
-border-radius: 30px;
+    max-width: 1130px;
+    margin: 0 auto;
+    width: 100%;
+    border-radius: 30px;
 }
 
 .carousel-item img {
-width: 100%;
-max-height: 450px;
-border-radius: 30px;
-object-fit: cover;
-margin-bottom: 20px;
-margin-right: 20px;
+    width: 100%;
+    max-height: 450px; /* Tetap menjaga tinggi maksimum */
+    border-radius: 30px;
+    object-fit: cover;
+    margin-bottom: 20px;
+    margin-right: 20px;
 }
 
 /* Custom carousel controls */
 .carousel-control-prev-icon,
 .carousel-control-next-icon {
-background-color: white;
-border-radius: 50%;
-box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* Menambahkan efek bayangan */
-width: 50px;
-height: 50px;
-display: flex;
-align-items: center;
-justify-content: center;
-position: absolute;
-top: 50%;
-transform: translateY(-50%);
-z-index: 2;
+    background-color: white;
+    border-radius: 50%;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* Menambahkan efek bayangan */
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
 }
 
 .carousel-control-prev {
-left: -90px;
+    left: -90px;
 }
 
 .carousel-control-next {
-right: -90px;
+    right: -90px;
 }
 
 .carousel-control-prev-icon i,
 .carousel-control-next-icon i {
-font-size: 1.5rem;
-color: black;
+    font-size: 1.5rem;
+    color: black;
 }
 
 /* Fully opaque controls */
 .carousel-control-prev,
 .carousel-control-next {
-opacity: 1;
-pointer-events: auto;
+    opacity: 1;
+    pointer-events: auto;
 }
+
+/* Media Query untuk tampilan lebih kecil */
+@media (max-width: 768px) {
+    .slider {
+        padding: 60px 0; /* Mengurangi padding untuk layar kecil */
+    }
+
+    .carousel-item img {
+        max-height: 300px; /* Mengurangi tinggi maksimum untuk gambar */
+        margin-bottom: 10px; /* Mengurangi margin bawah */
+        margin-right: 0; /* Menghapus margin kanan */
+    }
+
+    .carousel-control-prev {
+        left: 10px; /* Memindahkan kontrol ke dalam tampilan */
+    }
+
+    .carousel-control-next {
+        right: 10px; /* Memindahkan kontrol ke dalam tampilan */
+    }
+
+    .carousel-control-prev-icon,
+    .carousel-control-next-icon {
+        width: 40px; /* Mengurangi ukuran kontrol */
+        height: 40px;
+    }
+}
+
+@media (max-width: 576px) {
+    .carousel-item img {
+        max-height: 200px; /* Mengurangi tinggi maksimum untuk layar lebih kecil */
+    }
+}
+
 
 /* PHOTO */
 .photo {
@@ -461,32 +595,40 @@ pointer-events: auto;
     margin-top: -10px;
     margin-bottom: 50px;
     display: flex;
-    justify-content: center;
+    justify-content: center; /* Center the map horizontally */
 }
 
 #map {
-    height: 550px;
-    width: 100%; /* Make the map responsive to the container */
-    max-width: 1200px; /* Maximum width for large screens */
-    border-radius: 20px; /* Rounded corners */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adding a subtle shadow for better visuals */
+    height: 550px; /* Tinggi awal untuk peta */
+    width: 100%; /* Peta responsif terhadap kontainer */
+    max-width: 1200px; /* Lebar maksimum untuk layar besar */
+    border-radius: 20px; /* Sudut membulat */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Bayangan halus untuk visual yang lebih baik */
 }
 
-/* Responsivitas agar ukuran peta tetap proporsional di layar kecil */
+/* Responsivitas untuk layar di bawah 1200px */
 @media (max-width: 1200px) {
     #map {
         width: 90%; /* Lebar peta di layar kecil */
-        height: 400px; /* Tinggi yang tetap proporsional */
+        height: 400px; /* Tinggi peta yang tetap proporsional */
     }
 }
 
-/* Responsivitas untuk layar yang lebih kecil lagi */
+/* Responsivitas untuk layar di bawah 768px */
 @media (max-width: 768px) {
     #map {
         width: 100%; /* Lebar penuh untuk layar sangat kecil */
         height: 300px; /* Lebih kecil lagi untuk layar yang sangat sempit */
     }
 }
+
+/* Responsivitas untuk layar di bawah 480px */
+@media (max-width: 480px) {
+    #map {
+        height: 250px; /* Tinggi peta untuk layar ekstra kecil */
+    }
+}
+
 
 
 
@@ -504,11 +646,13 @@ pointer-events: auto;
     margin: 250px auto;
     align-items: center;
     justify-content: space-between;
+    flex-wrap: wrap; /* Menambahkan ini untuk mengatur ulang item dalam tampilan kecil */
 }
 
 .text-content {
     max-width: 600px;
     margin-left: -50px;
+    flex: 1; /* Menambahkan ini agar dapat beradaptasi dengan ukuran layar */
 }
 
 .text-content h3 {
@@ -527,6 +671,7 @@ pointer-events: auto;
     display: flex;
     gap: 15px;
     margin-right: -50px;
+    flex-wrap: wrap; /* Menambahkan ini untuk mengatur ulang gambar dalam tampilan kecil */
 }
 
 .image-content img {
@@ -536,11 +681,35 @@ pointer-events: auto;
     object-fit: cover;
 }
 
+/* Media Query untuk tampilan lebih kecil */
+@media (max-width: 768px) {
+    .tasty-food-section {
+        flex-direction: column; /* Mengatur arah kolom pada layar kecil */
+        align-items: center; /* Mengatur item di tengah */
+    }
+
+    .text-content {
+        max-width: 100%; /* Memperlebar lebar konten teks */
+        margin-left: 0; /* Menghapus margin kiri */
+        margin-bottom: 20px; /* Tambahkan margin bawah untuk jarak antar elemen */
+    }
+
+    .image-content {
+        justify-content: center; /* Mengatur gambar ke tengah */
+    }
+
+    .image-content img {
+        width: 100%; /* Mengatur gambar agar responsif */
+        height: auto; /* Membiarkan tinggi menyesuaikan proporsi */
+        max-width: 275px; /* Menjaga ukuran maksimum agar tidak terlalu besar */
+    }
+}
+
 /* PART 2 */
 .Tasty-Food {
     background-color: #ffffff;
     padding: 20px;
-    margin-top: -100px;
+    margin-top: -200px;
 }
 
 .food-section {
@@ -549,17 +718,20 @@ pointer-events: auto;
     margin: 250px auto;
     align-items: center;
     justify-content: space-between;
+    flex-wrap: wrap; /* Menambahkan ini untuk memungkinkan elemen membungkus saat ruang terbatas */
 }
 
 .content-text {
     max-width: 600px;
     margin-right: -50px;
+    flex: 1; /* Menambahkan ini agar dapat beradaptasi dengan ukuran layar */
 }
 
 .content-text h3 {
     font-size: 2rem;
     font-weight: bold;
     margin-bottom: 15px;
+    margin-top: 20px;
 }
 
 .content-text p {
@@ -573,6 +745,7 @@ pointer-events: auto;
     display: flex;
     gap: 15px;
     margin-left: -50px;
+    flex-wrap: wrap; /* Menambahkan ini untuk memungkinkan gambar membungkus saat ruang terbatas */
 }
 
 .content-image img {
@@ -580,6 +753,30 @@ pointer-events: auto;
     height: 270px;
     border-radius: 15px;
     object-fit: cover;
+}
+
+/* Media Query untuk tampilan lebih kecil */
+@media (max-width: 768px) {
+    .food-section {
+        flex-direction: column; /* Mengatur arah kolom pada layar kecil */
+        align-items: center; /* Mengatur item di tengah */
+    }
+
+    .content-text {
+        max-width: 100%; /* Memperlebar lebar konten teks */
+        margin-right: 0; /* Menghapus margin kanan */
+        margin-bottom: 20px; /* Tambahkan margin bawah untuk jarak antar elemen */
+    }
+
+    .content-image {
+        justify-content: center; /* Mengatur gambar ke tengah */
+    }
+
+    .content-image img {
+        width: 100%; /* Mengatur gambar agar responsif */
+        height: auto; /* Membiarkan tinggi menyesuaikan proporsi */
+        max-width: 270px; /* Menjaga ukuran maksimum agar tidak terlalu besar */
+    }
 }
 
 /* PART 3 */

@@ -1,24 +1,18 @@
 @extends('layouts.user')
 @section('content')
-        <div class="content-title">
-            <h1>GALERY KAMI</h1>
-        </div>
-        <!-- Carousel -->
-    <section class="slider">
+    <div class="content-title">
+        <h1>GALERY KAMI</h1>
+    </div>
+    <!-- Carousel -->
+    @php $slider = App\Models\Slider::orderBy('id', 'asc')->get(); @endphp
+    <section class="slider ">
         <div id="foodCarousel" class="carousel slide content" data-bs-ride="carousel">
             <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img src="{{ asset('assets/frontend/ella-olsson-mmnKI8kMxpc-unsplash.jpg') }}" class="d-block img-fluid"
-                        alt="Food 1">
-                </div>
-                <div class="carousel-item">
-                    <img src="{{ asset('assets/frontend/luisa-brimble-HvXEbkcXjSk-unsplash.jpg') }}" class="d-block img-fluid"
-                        alt="Food 2">
-                </div>
-                <div class="carousel-item">
-                    <img src="{{ asset('assets/frontend/anna-pelzer-IGfIGP5ONV0-unsplash.jpg') }}" class="d-block img-fluid"
-                        alt="Food 3">
-                </div>
+                @foreach ($slider as $data)
+                    <div class="carousel-item active">
+                        <img src="{{ asset('/storage/sliders/' . $data->image) }}" class="d-block img-fluid" alt="Food 1">
+                    </div>
+                @endforeach
             </div>
             <!-- Previous Button with Font Awesome Icon -->
             <button class="carousel-control-prev" type="button" data-bs-target="#foodCarousel" data-bs-slide="prev">
