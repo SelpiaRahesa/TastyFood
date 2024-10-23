@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;900&display=swap");
+
 body,
 html {
     margin: 0;
@@ -6,186 +7,261 @@ html {
     height: 100%;
     width: 100%;
     font-family: "Montserrat", sans-serif;
-    }
-
-
-    .ms-auto {
-        margin-right: -50px;
-    }
-
-    .background-image-other {
-        background-size: 110%;
-        background-image: url("/assets/frontend/Group 70@2x.png");
-        background-position: top center;
-        height: 700px;
-        width: 100%;
-        position: relative;
-        color: white;
-        overflow: hidden;
-        background-repeat: no-repeat;
-        z-index: 0;
-    }
-    /* Responsivitas untuk layar lebih kecil dari 1200px */
-@media (max-width: 1200px) {
-    .background-image-other {
-        height: 600px; /* Sesuaikan tinggi untuk layar lebih kecil */
-    }
+    overflow-x: hidden;
+    font-size: 1rem;
+    scroll-behavior: smooth;
+    will-change: transform; /* Memberi tahu browser untuk mengoptimasi elemen ini */
+    transform: translateZ(0); /* Memanfaatkan hardware acceleration */
 }
 
-/* Responsivitas untuk layar lebih kecil dari 768px */
-@media (max-width: 768px) {
-    .background-image-other {
-        height: 400px; /* Tinggi lebih kecil untuk tablet */
-    }
+.ms-auto {
+    margin-right: -80px;
 }
 
-/* Responsivitas untuk layar lebih kecil dari 480px */
-@media (max-width: 480px) {
-    .background-image-other {
-        height: 300px; /* Tinggi lebih kecil untuk ponsel */
-    }
+.background-image-other {
+    background-size: cover;
+    background-image: url("/assets/frontend/Group 70@2x.png");
+    background-position: top center;
+    height: 80%;
+    width: 100%;
+    color: white;
+    overflow: hidden;
+    background-repeat: no-repeat;
+    z-index: 0;
 }
 
+/* Navbar styling */
 .navbar {
     display: flex;
     margin-top: 30px;
     align-items: center;
-    justify-content: space-between; /* Tambahkan ini agar elemen terdistribusi dengan baik */
-    flex-wrap: wrap; /* Agar item di dalam navbar dapat berpindah baris jika diperlukan */
+    justify-content: space-between;
 }
 
 .navbar-nav {
     display: flex;
-    flex-grow: 1; /* Memungkinkan navbar-nav mengambil ruang yang tersisa */
-    justify-content: flex-end; /* Menempatkan item di sebelah kanan */
+    align-items: center;
 }
 
 .navbar-nav .nav-link {
-    color: white; /* Mengubah warna tautan menjadi putih */
+    color: white;
     margin-right: 0.7rem;
+    font-size: 1rem;
 }
 
 .navbar .navbar-brand {
     font-size: 1.5rem;
     font-weight: 700;
-    text-decoration: none; /* Menghapus garis bawah */
-    color: white; /* Warna normal */
-    transition: color 0.3s ease; /* Menambahkan transisi untuk perubahan warna */
+    margin-left: -15px;
+    text-decoration: none;
+    color: white;
+    transition: color 0.3s ease;
 }
-
 .navbar .navbar-brand:hover,
 .navbar-nav .nav-link:hover {
-    color: #ccc; /* Pastikan hover tetap berwarna putih */
-    transition: color 0.3s ease; /* Menambahkan transisi untuk perubahan warna */
+    color: #ccc;
+    transition: color 0.3s ease;
 }
 
-/* Responsivitas untuk layar yang lebih kecil dari 768px */
+/* Content styling */
+.content-title {
+    position: absolute;
+    top: 75%;
+    left: -100px; /* Space from the left */
+    right: 10%;
+    max-width: 655px;
+    transform: translateY(-50%); /* Centers vertically */
+    padding: 0 20px;
+    color: white;
+    margin-top: -200px;
+    /* margin-left: 0px; */
+}
+
+.content-title h1 {
+    font-weight: 700;
+    text-align: left; /* Align text to the left */
+    color: white;
+    font-size: 3rem;
+    margin: 0;
+    /* Optionally add padding or margin for spacing */
+}
+
+/* Media queries for responsiveness */
+
+/* Small screens (mobile) */
 @media (max-width: 768px) {
     .navbar {
-        flex-direction: column; /* Mengubah arah menjadi kolom */
-        align-items: flex-start; /* Rata kiri */
+        flex-direction: column;
+        align-items: flex-start;
+        margin-top: 20px;
+    }
+
+    .navbar .navbar-brand {
+        font-size: 1.2rem; /* Adjust brand size for smaller screens */
+        margin-left: 55px; /* Center brand */
     }
 
     .navbar-nav {
-        flex-direction: column; /* Mengubah arah menjadi kolom untuk menu */
-        width: 100%; /* Mengambil lebar penuh */
-        margin-top: 10px; /* Jarak antara navbar-brand dan navbar-nav */
+        flex-direction: column;
+        width: 100%;
+        margin-top: 10px;
     }
 
     .navbar-nav .nav-link {
-        margin-right: 0; /* Menghapus margin kanan */
-        margin-bottom: 10px; /* Tambahkan jarak antar tautan */
+        margin-right: 0;
+        margin-bottom: 10px;
+        font-size: 0.9rem;
+    }
+
+    .content-title {
+        top: 75%; /* Adjust top position for better centering */
+        left: 1%; /* Reduce left space */
+        right: 10%; /* Adjust right space */
+        max-width: 90%;
+        padding: 0 10px;
+        font-size: 0.9rem;
+    }
+
+    .content-title h1 {
+        font-size: 2em;
+        line-height: 1.2;
     }
 }
 
-/* Responsivitas untuk layar yang lebih kecil dari 480px */
-@media (max-width: 480px) {
+/* Medium screens (tablet) */
+@media (min-width: 768px) and (max-width: 992px) {
     .navbar .navbar-brand {
-        font-size: 1.3rem; /* Mengurangi ukuran font untuk tampilan ponsel */
+        font-size: 1.3rem; /* Slightly larger for tablet */
+        margin-left: -15px;
     }
 
     .navbar-nav .nav-link {
-        font-size: 0.9rem; /* Mengurangi ukuran font untuk tautan */
+        font-size: 1rem;
+    }
+
+    .content-title {
+        left: 10%;
+        right: 10%;
+        max-width: 80%;
+        font-size: 1rem;
+    }
+
+    .content-title h1 {
+        font-size: 2.5em;
     }
 }
 
+/* Large screens (desktop) */
+@media (min-width: 992px) {
+    .navbar .navbar-brand {
+        font-size: 1.5rem; /* Default size for large screens */
+        margin-left: -25px;
+    }
+
     .content-title {
-        position: absolute;
-        top: 50%;
-        left: 50px; /* Space from the left */
+        left: 20px;
         right: 10%;
         max-width: 655px;
-        transform: translateY(-50%); /* Centers vertically */
-        padding: 0 20px;
-        color: white;
-        margin-top: -90px;
-        margin-left: -13px;
+        font-size: 1.2rem;
     }
 
     .content-title h1 {
-        font-size: 3.1rem;
-        font-weight: bold;
-        margin: 0;
-        color: white;
-        text-align: left; /* Align text to the left */
-        /* Optionally add padding or margin for spacing */
+        font-size: 3em;
     }
-    .content-title {
-        position: absolute;
-        top: 50%;
-        left: 50px; /* Space from the left */
-        right: 10%;
-        max-width: 655px;
-        transform: translateY(-50%); /* Centers vertically */
-        padding: 0 20px;
-        color: white;
-        margin-top: -90px;
-        margin-left: -13px;
-    }
+}
 
-    .content-title h1 {
-        font-size: 3.1rem; /* Ukuran font besar untuk desktop */
-        font-weight: bold;
-        margin: 0;
-        color: white;
-        text-align: left; /* Align text to the left */
-    }
+/* Hamburger menu */
+.navbar-toggler {
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+    margin-left: auto; /* Move to the right */
+    margin-top: -40px;
+}
 
-    /* Responsivitas untuk layar yang lebih kecil dari 768px */
-    @media (max-width: 768px) {
-        .content-title {
-            left: 20px; /* Mengurangi ruang dari kiri */
-            right: 20px; /* Mengurangi ruang dari kanan */
-            padding: 0 10px; /* Mengurangi padding */
-            margin-top: -70px; /* Menyesuaikan margin atas */
-            transform: translateY(-50%); /* Tetap menjaga pusat vertikal */
-        }
+/* Sidebar styling */
+.sidebar {
+    position: absolute;
+    top: 0;
+    right: -300px; /* Start off-screen to the right */
+    height: 100vh; /* Full height */
+    width: 300px;
+    background-color: #f8f9fa;
+    box-shadow: -2px 0 15px rgba(0, 0, 0, 0.3);
+    z-index: 1000; /* Lower than the navbar-toggler */
+    transition: right 0.3s ease;
+    padding: 1.5rem;
+    border-bottom-left-radius: 18px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
 
-        .content-title h1 {
-            font-size: 2.5rem; /* Mengurangi ukuran font untuk tampilan ponsel */
-            text-align: center; /* Rata tengah untuk ponsel */
-        }
-    }
+/* Sidebar header styling */
+.sidebar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 30px;
+}
 
-    /* Responsivitas untuk layar yang lebih kecil dari 480px */
-    @media (max-width: 480px) {
-        .content-title {
-            left: 10px; /* Ruang dari kiri lebih sedikit */
-            right: 10px; /* Ruang dari kanan lebih sedikit */
-            margin-top: -50px; /* Menyesuaikan margin atas lebih jauh */
-        }
+.sidebar-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #343a40;
+}
 
-        .content-title h1 {
-            font-size: 2rem; /* Mengurangi ukuran font lebih kecil untuk tampilan sangat kecil */
-        }
-    }
+.close-btn {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #343a40;
+}
+
+/* Sidebar navigation styling */
+.sidebar-nav {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+    margin-top: -250px;
+}
+
+.sidebar-nav li {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.sidebar-nav a {
+    text-decoration: none;
+    color: #495057;
+    font-size: 1.1rem;
+    transition: color 0.3s;
+}
+
+.sidebar-nav a:hover {
+    color: #007bff;
+}
+
+/* Sidebar footer styling */
+.sidebar-footer {
+    font-size: 0.9rem;
+    color: #6c757d;
+}
+
+/* Show sidebar when active */
+.sidebar.active {
+    right: 0; /* Slide in from the right */
+}
 
 
 /* slider */
 .slider {
     background-color: #f4f4f4;
-    padding: 100px 0;
-    margin-top: -190px;
+    padding: 70px 0;
+    /* margin-top: -190px; */
     margin-bottom: 60px;
 }
 
@@ -358,7 +434,7 @@ html {
 .contact-form-section {
     padding: 50px;
     background-color: #ffffff;
-    margin-top: -150px;
+    /* margin-top: -150px; */
 }
 
 /* Input and textarea fields */
@@ -636,8 +712,7 @@ html {
 .tastyFood {
     background-color: #f4f4f4;
     padding: 20px;
-    margin-top: -350px;
-    margin-bottom: 20px;
+    /* margin-top: -150px; */
 }
 
 .tasty-food-section {
@@ -647,6 +722,8 @@ html {
     align-items: center;
     justify-content: space-between;
     flex-wrap: wrap; /* Menambahkan ini untuk mengatur ulang item dalam tampilan kecil */
+    margin-top: 80px;
+    margin-bottom: 80px;
 }
 
 .text-content {
@@ -709,7 +786,7 @@ html {
 .Tasty-Food {
     background-color: #ffffff;
     padding: 20px;
-    margin-top: -200px;
+
 }
 
 .food-section {
@@ -719,6 +796,7 @@ html {
     align-items: center;
     justify-content: space-between;
     flex-wrap: wrap; /* Menambahkan ini untuk memungkinkan elemen membungkus saat ruang terbatas */
+    margin-top: 100px;
 }
 
 .content-text {
@@ -783,7 +861,7 @@ html {
 .Food {
     background-color: #ffffff;
     padding: 20px;
-    margin-top: -300px;
+
 }
 
 .tasty-section {
@@ -792,6 +870,7 @@ html {
     margin: 250px auto;
     align-items: center;
     justify-content: space-between;
+    margin-top: -150px;
 }
 
 .content-text-misi {
@@ -868,7 +947,7 @@ html {
 .news-tasty {
     background-color: #f4f4f4;
     padding: 20px;
-    margin-top: -350px;
+    /* margin-top: -150px; */
 }
 
 .news-tasty-section {
