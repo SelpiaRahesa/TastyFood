@@ -32,7 +32,7 @@
                 </ul>
             </div>
         </nav>
-        <!-- Konten utama di sini -->
+        <!-- konten utama di sini -->
     </div>
 
 </div>

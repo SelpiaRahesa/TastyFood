@@ -83,7 +83,7 @@ html {
     color: white;
     font-size: 3rem;
     margin: 0;
-   
+
     /* Optionally add padding or margin for spacing */
 }
 
@@ -116,7 +116,7 @@ html {
 
     .content-title {
         top: 75%; /* Adjust top position for better centering */
-        left: 1%; /* Reduce left space */
+        left: 15%; /* Reduce left space */
         right: 10%; /* Adjust right space */
         max-width: 90%;
         padding: 0 10px;
