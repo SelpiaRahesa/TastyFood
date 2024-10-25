@@ -83,6 +83,7 @@ html {
     color: white;
     font-size: 3rem;
     margin: 0;
+   
     /* Optionally add padding or margin for spacing */
 }
 
@@ -956,6 +957,7 @@ html {
     margin: 250px auto;
     align-items: center;
     justify-content: space-between;
+    margin-top: 70px;
 }
 
 .text-content-news {

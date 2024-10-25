@@ -46,81 +46,90 @@
             <div class="container-news">
                 <div class="row">
                     <div class="col-md-6">
+                        @php $berita = App\Models\Berita::where('id', 23)->first(); @endphp
+                        @if ($berita)
                         <div class="news-card-big mb-4">
                             <div class="aspect-ratio">
-                                <img src="{{ asset('assets/frontend/fathul-abrar-T-qI_MI2EMA-unsplash.jpg') }}"
+                                <img src="{{  asset('/storage/beritas/' . $berita->image) }}"
                                     class="news-img-top" alt="Food Image">
                             </div>
                             <div class="news-body mb-5">
-                                <h5 class="news-title mb-4">Lorem Ipsum Dolor Sit Amet, Consectetur Adipiscing Elit</h5>
-                                <p class="news-content mb-5">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce
-                                    scelerisque magna aliquet cursus tempus. Duis viverra metus ut turpis elementum
-                                    elementum.</p>
+                                <h5 class="news-title mb-4">{{ $berita->judul }}</h5>
+                                <p class="news-content mb-5">{{ $berita->deskripsi }}</p>
                                 <a href="#" class="btn btn-link text-warning read-more">Baca selengkapnya</a>
                             </div>
                         </div>
+                        @endif
                     </div>
 
                     <div class="col-md-6">
                         <div class="row">
                             <div class="col-sm-6">
+                                @php $berita = App\Models\Berita::where('id', 9)->first(); @endphp
+                                @if ($berita)
                                 <div class="news-card mb-4">
                                     <div class="aspect-ratio">
-                                        <img src="{{ asset('assets/frontend/sanket-shah-SVA7TyHxojY-unsplash.jpg') }}"
+                                        <img src="{{ asset('/storage/beritas/' . $berita->image) }}"
                                             class="news-img-top" alt="Food Image">
                                     </div>
                                     <div class="news-body">
-                                        <h5 class="news-title">Lorem Ipsum</h5>
-                                        <p class="news-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                        </p>
+                                        <h5 class="news-title">{{ $berita->judul }}</h5>
+                                        <p class="news-text">{{ $berita->deskripsi }}</p>
                                         <a href="#" class="btn btn-link text-warning read-more">Baca selengkapnya</a>
                                     </div>
                                 </div>
+                                @endif
                             </div>
 
                             <div class="col-sm-6">
+                                @php $berita = App\Models\Berita::where('id', 18)->first(); @endphp
+                                @if ($berita)
                                 <div class="news-card mb-4">
                                     <div class="aspect-ratio">
-                                        <img src="{{ asset('assets/frontend/sebastian-coman-photography-eBmyH7oO5wY-unsplash.jpg') }}"
+                                        <img src="{{ asset('/storage/beritas/' . $berita->image)  }}"
                                             class="news-img-top" alt="Food Image">
                                     </div>
                                     <div class="news-body">
-                                        <h5 class="news-title">Lorem Ipsum</h5>
-                                        <p class="news-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                        </p>
+                                        <h5 class="news-title">{{ $berita->judul }}</h5>
+                                        <p class="news-text">{{ $berita->deskripsi }}</p>
                                         <a href="#" class="btn btn-link text-warning read-more">Baca selengkapnya</a>
                                     </div>
                                 </div>
+                                @endif
                             </div>
 
                             <div class="col-sm-6">
+                                @php $berita = App\Models\Berita::where('id', 19)->first(); @endphp
+                                @if ($berita)
                                 <div class="news-card mb-4">
                                     <div class="aspect-ratio">
-                                        <img src="{{ asset('assets/frontend/jimmy-dean-Jvw3pxgeiZw-unsplash.jpg') }}"
+                                        <img src="{{ asset('/storage/beritas/' . $berita->image) }}"
                                             class="news-img-top" alt="Food Image">
                                     </div>
                                     <div class="news-body">
-                                        <h5 class="news-title">Lorem Ipsum</h5>
-                                        <p class="news-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                        </p>
+                                        <h5 class="news-title">{{ $berita->judul }}</h5>
+                                        <p class="news-text">{{ $berita->deskripsi }}</p>
                                         <a href="#" class="btn btn-link text-warning read-more">Baca selengkapnya</a>
                                     </div>
                                 </div>
+                                @endif
                             </div>
 
                             <div class="col-sm-6">
+                                @php $berita = App\Models\Berita::where('id', 20)->first(); @endphp
+                                @if ($berita)
                                 <div class="news-card mb-4">
                                     <div class="aspect-ratio">
-                                        <img src="{{ asset('assets/frontend/luisa-brimble-HvXEbkcXjSk-unsplash.jpg') }}"
+                                        <img src="{{ asset('/storage/beritas/' . $berita->image) }}"
                                             class="news-img-top" alt="Food Image">
                                     </div>
                                     <div class="news-body">
-                                        <h5 class="news-title">Lorem Ipsum</h5>
-                                        <p class="news-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                        </p>
+                                        <h5 class="news-title">{{ $berita->judul }}</h5>
+                                        <p class="news-text">{{ $berita->deskripsi }}</p>
                                         <a href="#" class="btn btn-link text-warning read-more">Baca selengkapnya</a>
                                     </div>
                                 </div>
+                                @endif
                             </div>
                         </div>
                     </div>
