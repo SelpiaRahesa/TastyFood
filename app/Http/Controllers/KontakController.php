@@ -13,8 +13,8 @@ class KontakController extends Controller
      */
     public function index()
     {
-        $kontak = Kontak::first();
-        // confirmDelete("Delete", "Are you sure you want to delete?");
+        $kontak = Kontak::latest()->paginate(5);
+        confirmDelete("Delete", "Are you sure you want to delete?");
         return view('admin.kontak.index', compact('kontak'));
     }
 
@@ -23,7 +23,7 @@ class KontakController extends Controller
      */
     public function create()
     {
-        // return view('admin.kontak.create');
+        return view('admin.kontak.create');
     }
 
     /**
@@ -31,20 +31,20 @@ class KontakController extends Controller
      */
     public function store(Request $request)
     {
-        // $this->validate($request, [
-        //     'no_telepon' => 'required',
-        //     'email' => 'required',
-        //     'alamat' => 'required',
+        $this->validate($request, [
+            'no_telepon' => 'required',
+            'email' => 'required',
+            'alamat' => 'required',
 
-        // ]);
+        ]);
 
-        // $kontak = new Kontak();
-        // $kontak->no_telepon = $request->no_telepon;
-        // $kontak->email = $request->email;
-        // $kontak->alamat = $request->alamat;
-        // $kontak->save();
-        // Alert::success('Success', 'Data Added Successfully')->autoClose(1000);
-        // return redirect()->route('kontak.index');
+        $kontak = new Kontak();
+        $kontak->no_telepon = $request->no_telepon;
+        $kontak->email = $request->email;
+        $kontak->alamat = $request->alamat;
+        $kontak->save();
+        Alert::success('Success', 'Data Added Successfully')->autoClose(1000);
+        return redirect()->route('kontak.index');
     }
 
     /**
@@ -92,9 +92,9 @@ class KontakController extends Controller
      */
     public function destroy($id)
     {
-        // $kontak = Kontak::findOrFail($id);
-        // $kontak->delete();
-        // Alert::toast('Success', 'Data Succesfully Deleted')->success('Success', 'Data Succesfully Deleted');
-        // return redirect()->route('kontak.index');
+        $kontak = Kontak::findOrFail($id);
+        $kontak->delete();
+        Alert::toast('Success', 'Data Succesfully Deleted')->success('Success', 'Data Succesfully Deleted');
+        return redirect()->route('kontak.index');
     }
 }

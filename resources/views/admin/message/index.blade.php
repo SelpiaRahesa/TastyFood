@@ -1,4 +1,4 @@
- @extends('layouts.admin')
+@extends('layouts.admin')
 
 @section('content')
 <div class="container">
@@ -21,22 +21,30 @@
                                     <th>Name</th>
                                     <th>Email</th>
                                     <th>Message</th>
+                                    <th>Date</th>
+                                    <th>Action</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 @php $no = 1; @endphp
                                 @forelse ($message as $data)
                                 <tr>
-                                <td>{{ $no++ }}</td>
-                                <td>{{ $data->subject }}</td>
-                                <td>{{ $data->name }}</td>
-                                <td>{{ $data->email }}</td>
-                                <td>{{ $data->message }}</td>
+                                    <td>{{ $no++ }}</td>
+                                    <td>{{ $data->subject }}</td>
+                                    <td>{{ $data->name }}</td>
+                                    <td>{{ $data->email }}</td>
                                     <td>
-                                        <form action="{{route('message.destroy', $data->id)}}" method="POST">
+                                        <span class="message-preview" onclick="toggleMessage(this)"
+                                              data-full-message="{{ $data->message }}">
+                                            {{ \Illuminate\Support\Str::limit($data->message, 50, '...') }}
+                                        </span>
+                                    </td>
+                                    <td>{{ $data->created_at->format('d F Y') }}</td>
+                                    <td>
+                                        <form action="{{ route('message.destroy', $data->id) }}" method="POST">
                                             @csrf
                                             @method('DELETE')
-                                            <a href="{{route('message.destroy', $data->id)}}" class="btn btn-sm btn-danger" data-confirm-delete="true">
+                                            <a href="{{ route('message.destroy', $data->id) }}" class="btn btn-sm btn-danger" data-confirm-delete="true">
                                                 delete
                                             </a>
                                         </form>
@@ -44,7 +52,7 @@
                                 </tr>
                                 @empty
                                 <tr>
-                                    <td colspan="5" class="text-center">
+                                    <td colspan="7" class="text-center">
                                         Data data belum Tersedia.
                                     </td>
                                 </tr>
@@ -58,4 +66,16 @@
         </div>
     </div>
 </div>
+
+<script>
+function toggleMessage(element) {
+    const fullMessage = element.getAttribute('data-full-message');
+    if (element.innerText.endsWith('...')) {
+        element.innerText = fullMessage;
+    } else {
+        element.innerText = fullMessage.substring(0, 50) + '...';
+    }
+}
+</script>
+
 @endsection

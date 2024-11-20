@@ -40,7 +40,7 @@ html {
 
 .navbar-nav {
     display: flex;
-    align-items: center;
+    transform: translateX(-35px); /* Geser seluruh grup ke kiri */
 }
 
 .navbar-nav .nav-link {
@@ -52,7 +52,10 @@ html {
 .navbar .navbar-brand {
     font-size: 1.5rem;
     font-weight: 700;
-    margin-left: -15px;
+    margin-left: -30px; /* Coba nilai negatif yang lebih besar */
+    position: relative;
+    left: -27px; /* Atur lebih ke kiri sesuai kebutuhan */
+    padding-left: 0;
     text-decoration: none;
     color: white;
     transition: color 0.3s ease;
@@ -67,22 +70,22 @@ html {
 .content-title {
     position: absolute;
     top: 75%;
-    left: -100px; /* Space from the left */
-    right: 10%;
+    left: -300px; /* Space from the left */
     max-width: 655px;
     transform: translateY(-50%); /* Centers vertically */
     padding: 0 20px;
     color: white;
     margin-top: -200px;
-    /* margin-left: 0px; */
+    margin-left: 30px;
+
 }
 
-.content-title h1 {
-    font-weight: 700;
+.content-title h2 {
+    font-weight: 750;
     text-align: left; /* Align text to the left */
     color: white;
-    font-size: 3rem;
     margin: 0;
+    font-size: 3rem !important;
 
     /* Optionally add padding or margin for spacing */
 }
@@ -99,7 +102,7 @@ html {
 
     .navbar .navbar-brand {
         font-size: 1.2rem; /* Adjust brand size for smaller screens */
-        margin-left: 55px; /* Center brand */
+        margin-left: 60px; /* Center brand */
     }
 
     .navbar-nav {
@@ -116,8 +119,8 @@ html {
 
     .content-title {
         top: 75%; /* Adjust top position for better centering */
-        left: 15%; /* Reduce left space */
-        right: 10%; /* Adjust right space */
+        left: -5px; /* Reduce left space */
+        right: -50%; /* Adjust right space */
         max-width: 90%;
         padding: 0 10px;
         font-size: 0.9rem;
@@ -133,7 +136,7 @@ html {
 @media (min-width: 768px) and (max-width: 992px) {
     .navbar .navbar-brand {
         font-size: 1.3rem; /* Slightly larger for tablet */
-        margin-left: -15px;
+        margin-left: 55px;
     }
 
     .navbar-nav .nav-link {
@@ -141,8 +144,8 @@ html {
     }
 
     .content-title {
-        left: 10%;
-        right: 10%;
+        left: 2%;
+        right: 2%;
         max-width: 80%;
         font-size: 1rem;
     }
@@ -156,7 +159,7 @@ html {
 @media (min-width: 992px) {
     .navbar .navbar-brand {
         font-size: 1.5rem; /* Default size for large screens */
-        margin-left: -25px;
+        margin-left: 25px;
     }
 
     .content-title {
@@ -261,17 +264,25 @@ html {
 /* slider */
 .slider {
     background-color: #f4f4f4;
-    padding: 70px 0;
-    /* margin-top: -190px; */
-    margin-bottom: 60px;
+    padding: 100px;
 }
 
 .content {
-    max-width: 1130px;
+    max-width: 1125px;
     margin: 0 auto;
     width: 100%;
     border-radius: 30px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+
 }
+/* Atur lebar maksimal carousel */
+.carousel {
+    max-width: 1225px; /* Sesuaikan dengan lebar yang diinginkan */
+    margin-top: 50px;
+    margin-bottom: 50px; /* Menjadikan carousel berada di tengah */
+}
+
 
 .carousel-item img {
     width: 100%;
@@ -299,13 +310,23 @@ html {
     z-index: 2;
 }
 
+/* Pastikan carousel memiliki posisi relatif */
+.carousel {
+    max-width: 1225px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    position: relative; /* Tambahkan posisi relatif */
+}
+
 .carousel-control-prev {
-    left: -90px;
+    left: -43px !important; /* Posisikan lebih jauh ke kiri */
 }
 
 .carousel-control-next {
-    right: -90px;
+    right: -43px !important; /* Posisikan lebih jauh ke kanan */
 }
+
+
 
 .carousel-control-prev-icon i,
 .carousel-control-next-icon i {
@@ -326,6 +347,11 @@ html {
         padding: 60px 0; /* Mengurangi padding untuk layar kecil */
     }
 
+    .carousel {
+        max-width: 95%; /* Mengatur lebar maksimal carousel */
+        margin: 0 auto; /* Mengatur posisi agar di tengah */
+    }
+
     .carousel-item img {
         max-height: 300px; /* Mengurangi tinggi maksimum untuk gambar */
         margin-bottom: 10px; /* Mengurangi margin bawah */
@@ -333,11 +359,11 @@ html {
     }
 
     .carousel-control-prev {
-        left: 10px; /* Memindahkan kontrol ke dalam tampilan */
+        left: -15px!important; /* Memindahkan kontrol ke dalam tampilan */
     }
 
     .carousel-control-next {
-        right: 10px; /* Memindahkan kontrol ke dalam tampilan */
+        right: -15px!important; /* Memindahkan kontrol ke dalam tampilan */
     }
 
     .carousel-control-prev-icon,
@@ -347,11 +373,99 @@ html {
     }
 }
 
+
 @media (max-width: 576px) {
     .carousel-item img {
-        max-height: 200px; /* Mengurangi tinggi maksimum untuk layar lebih kecil */
+        max-height: 200px; /* Reduce maximum height for smaller screens */
+    }
+
+    .carousel {
+        padding: 0 33px; /* Add padding to bring the carousel content inward */
+        max-width: 100%;
+    }
+    .carousel-control-prev {
+        left: 5px !important; /* Posisikan lebih jauh ke kiri */
+    }
+
+    .carousel-control-next {
+        right: 5px !important; /* Posisikan lebih jauh ke kanan */
+    }
+
+    .carousel-inner {
+        justify-content: center; /* Center carousel items */
     }
 }
+
+/* iPad Air dan iPad Pro 11" (768px hingga 1024px) */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .slider {
+        padding: 80px 0; /* Tetap mempertahankan padding asli */
+    }
+    .carousel {
+        max-width: 95%; /* Mengatur lebar maksimal carousel */
+        margin: 0 auto; /* Mengatur posisi agar di tengah */
+    }
+
+    .carousel-item img {
+        max-height: 300px; /* Tinggi gambar yang lebih besar pada layar tablet */
+    }
+
+    .carousel-control-prev {
+        left: -15px!important; /* Memasukkan kontrol sedikit ke dalam */
+    }
+
+    .carousel-control-next {
+        right: -15px!important;
+    }
+
+    .carousel-control-prev-icon,
+    .carousel-control-next-icon {
+        width: 45px; /* Menambah ukuran ikon kontrol */
+        height: 45px;
+    }
+
+    .carousel-inner {
+        justify-content: center;
+        padding: 0 40px; /* Sedikit padding di kiri dan kanan */
+    }
+}
+
+/* Surface Pro 7 dan iPad Pro 12.9" dalam mode landscape (1024px hingga 1366px) */
+@media (min-width: 1024px) and (max-width: 1366px) {
+    .slider {
+        padding: 80px 0;
+    }
+    .carousel {
+        max-width: 97%; /* Mengatur lebar maksimal carousel */
+        margin: 0 auto; /* Mengatur posisi agar di tengah */
+    }
+
+    .carousel-item img {
+        max-height: 450px; /* Tinggi gambar yang lebih besar untuk layar lebih lebar */
+    }
+
+    .carousel-control-prev {
+        left: 25px; /* Memasukkan kontrol lebih jauh ke dalam */
+    }
+
+    .carousel-control-next {
+        right: 25px;
+    }
+
+    .carousel-control-prev-icon,
+    .carousel-control-next-icon {
+        width: 50px;
+        height: 50px;
+    }
+
+    .carousel-inner {
+        justify-content: center;
+        padding: 0 50px; /* Tambahkan padding pada layar yang lebih lebar */
+    }
+}
+
+
+
 
 
 /* PHOTO */
@@ -365,8 +479,9 @@ html {
     flex-wrap: wrap;
     justify-content: center; /* Mengatur agar gambar tetap di tengah secara horizontal */
     text-align: center; /* Memastikan konten tetap rapi di tengah */
-    margin-top: 80px;
-    margin-bottom: 80px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    margin-left: 50px;
 }
 
 .rounded-img {
@@ -388,45 +503,112 @@ html {
     justify-content: center; /* Mengatur gambar tetap rapi di tengah */
 }
 
-/* Responsive Media Queries */
+/* iPad Pro */
+@media (min-width: 1024px) and (max-width: 1194px) {
+    .container-img {
+        margin-top: 60px; /* Ruang atas yang lebih besar */
+        margin-bottom: 60px; /* Ruang bawah yang lebih besar */
+        padding: 25px;
+        padding-left: 50px;
+        display: grid; /* Menggunakan grid untuk pengaturan kolom */
+        grid-template-columns: repeat(3, 1fr); /* Membuat 3 kolom */
+        gap:2px; /* Menambahkan jarak antar gambar */
+    }
+
+    .rounded-img {
+        width: 100%; /* Membuat gambar mengisi kolom */
+        height: 220px;
+    }
+}
+
+
+/* iPad Air */
+@media (min-width: 810px) and (max-width: 1024px) {
+    .rounded-img {
+        width: 210px !important; /* Menyesuaikan ukuran gambar untuk iPad Air */
+        height: 210px !important;
+        margin: 5px; /* Atur jarak antar gambar */
+    }
+
+    .container-img {
+        margin-top: 60px; /* Ruang atas yang lebih besar */
+        margin-bottom: 60px; /* Ruang bawah yang lebih besar */
+        padding-left: -50px !important;  /* Jarak kiri kontainer lebih besar untuk menggeser ke kiri */
+        padding-right: 20px; /* Jarak kanan kontainer */
+        display: flex;
+        flex-wrap: wrap; /* Agar gambar dapat dibungkus dengan baik */
+        justify-content: flex-start; /* Memindahkan gambar sedikit ke kiri */
+    }
+}
+
+
+
+/* Surface Pro 7 */
+@media (min-width: 912px) and (max-width: 1280px) {
+    .rounded-img {
+        width: 260px; /* Ukuran gambar lebih besar untuk Surface Pro 7 */
+        height: 260px;
+        margin: 12px;
+    }
+
+    .container-img {
+        margin-top: 70px; /* Atur jarak lebih besar */
+        margin-bottom: 70px;
+        padding: 10px; /* Sedikit padding tambahan pada kontainer */
+    }
+}
+
+/* Tablet (maksimum 1024px) */
 @media (max-width: 1024px) {
     .rounded-img {
         width: 220px; /* Menyesuaikan ukuran gambar untuk layar lebih kecil */
         height: 220px;
-        margin: 6px; /* Kurangi margin untuk lebih banyak ruang */
+        margin: 6px; /* Kurangi margin agar lebih banyak ruang */
     }
 
     .container-img {
         margin-top: 50px;
-        margin-bottom: 50px; /* Kurangi margin pada layar tablet */
+        margin-bottom: 50px; /* Menyesuaikan margin pada tablet */
     }
 }
 
+/* Ponsel (maksimum 768px) */
 @media (max-width: 768px) {
     .rounded-img {
-        width: 180px; /* Lebar gambar lebih kecil untuk tablet */
-        height: 180px;
-        margin: 5px; /* Kurangi margin antar gambar */
+        width: 210px; /* Lebar gambar lebih kecil untuk tablet */
+        height: 210px;
+        margin: 10px; /* Kurangi margin antar gambar */
     }
 
     .container-img {
         margin-top: 40px;
         margin-bottom: 40px;
+        padding: 35px;
+        margin-left: 10px;
     }
 }
 
+/* Ponsel sangat kecil (maksimum 480px) */
 @media (max-width: 480px) {
     .rounded-img {
-        width: 140px; /* Ukuran gambar lebih kecil pada layar ponsel */
-        height: 140px;
+        width: 315px; /* Ukuran gambar lebih kecil pada layar ponsel */
+        height: 315px;
         margin: 4px;
     }
 
     .container-img {
-        margin-top: 30px;
-        margin-bottom: 30px;
+        display: flex;
+        justify-content: center; /* Center items horizontally */
+        align-items: center;     /* Center items vertically */
+        width: 100%;             /* Full width to center within its container */
+        margin: 0 auto;          /* Center the container itself */
+        padding: 0;
+        text-align: center;
+        box-sizing: border-box;  /* Ensure padding doesn’t affect centering */
     }
 }
+
+
 
 
 /*  KONTAK */
@@ -435,7 +617,7 @@ html {
 .contact-form-section {
     padding: 50px;
     background-color: #ffffff;
-    /* margin-top: -150px; */
+    margin-top: 50px;
 }
 
 /* Input and textarea fields */
@@ -468,6 +650,7 @@ html {
     cursor: pointer;
     font-family: 'Poppins', sans-serif;
     text-decoration: none;
+
 }
 
 .submit-btn:hover {
@@ -578,6 +761,7 @@ html {
     height: auto; /* Adjusted to auto for better flexibility */
     padding: 20px 0;
     background-color: #fff;
+    margin-top: 50px;
 }
 
 .kontak-info {
@@ -590,7 +774,7 @@ html {
 
 .kontak-item {
     text-align: center;
-    flex: 1 1 250px; /* Flex with minimum width */
+    /* flex: 1 1 250px; Flex with minimum width */
     margin: 20px;
 }
 
@@ -669,8 +853,8 @@ html {
 }
 
 .map {
-    margin-top: -10px;
-    margin-bottom: 50px;
+    margin-top: 50px;
+
     display: flex;
     justify-content: center; /* Center the map horizontally */
 }
@@ -678,9 +862,9 @@ html {
 #map {
     height: 550px; /* Tinggi awal untuk peta */
     width: 100%; /* Peta responsif terhadap kontainer */
-    max-width: 1200px; /* Lebar maksimum untuk layar besar */
+    max-width: 1110px; /* Lebar maksimum untuk layar besar */
     border-radius: 20px; /* Sudut membulat */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Bayangan halus untuk visual yang lebih baik */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Bayangan halus untuk visual yang lebih baik */margin-bottom: 50px;
 }
 
 /* Responsivitas untuk layar di bawah 1200px */
@@ -694,7 +878,7 @@ html {
 /* Responsivitas untuk layar di bawah 768px */
 @media (max-width: 768px) {
     #map {
-        width: 100%; /* Lebar penuh untuk layar sangat kecil */
+        width: 85%; /* Lebar penuh untuk layar sangat kecil */
         height: 300px; /* Lebih kecil lagi untuk layar yang sangat sempit */
     }
 }
@@ -723,13 +907,13 @@ html {
     align-items: center;
     justify-content: space-between;
     flex-wrap: wrap; /* Menambahkan ini untuk mengatur ulang item dalam tampilan kecil */
-    margin-top: 80px;
-    margin-bottom: 80px;
+    margin-top: 50px;
+    margin-bottom: 50px;
 }
 
 .text-content {
     max-width: 600px;
-    margin-left: -50px;
+    margin-left: -10px;
     flex: 1; /* Menambahkan ini agar dapat beradaptasi dengan ukuran layar */
 }
 
@@ -747,14 +931,14 @@ html {
 
 .image-content {
     display: flex;
-    gap: 15px;
-    margin-right: -50px;
+    gap: 10px;
+    margin-right: -10px;
     flex-wrap: wrap; /* Menambahkan ini untuk mengatur ulang gambar dalam tampilan kecil */
 }
 
 .image-content img {
-    width: 275px;
-    height: 375px;
+    width: 250px;
+    height: 350px;
     border-radius: 15px;
     object-fit: cover;
 }
@@ -768,8 +952,9 @@ html {
 
     .text-content {
         max-width: 100%; /* Memperlebar lebar konten teks */
-        margin-left: 0; /* Menghapus margin kiri */
+        margin-right: 0; /* Menghapus margin kanan */
         margin-bottom: 20px; /* Tambahkan margin bawah untuk jarak antar elemen */
+        text-align: center; /* Menjaga teks tetap di tengah */
     }
 
     .image-content {
@@ -782,12 +967,76 @@ html {
         max-width: 275px; /* Menjaga ukuran maksimum agar tidak terlalu besar */
     }
 }
+/* Media Query untuk iPad Pro (12.9-inch) */
+@media (min-width: 1024px) and (max-width: 1366px) {
+    .tasty-food-section {
+        flex-direction: row; /* Pastikan tetap berbaris */
+        justify-content: space-between; /* Membagi ruang secara seimbang */
+        gap: 20px; /* Menambahkan jarak antar elemen */
+    }
+
+    .text-content {
+        margin-left: 0; /* Hapus margin negatif */
+        max-width: 50%; /* Batasi teks hingga separuh layar */
+    }
+
+    .image-content img {
+        width: 250px !important; /* Gambar lebih besar */
+        height: 350px !important; /* Menyesuaikan proporsi */
+    }
+}
+
+/* Media Query untuk iPad Air (10.9-inch) */
+@media (min-width: 820px) and (max-width: 1180px) {
+    .tasty-food-section {
+        flex-direction: column; /* Mengubah layout menjadi kolom */
+        align-items: center; /* Menjaga agar elemen berada di tengah */
+        gap: 20px; /* Menambah jarak antar elemen */
+    }
+
+    .text-content {
+        margin-left: 0; /* Menghapus margin kiri negatif */
+        max-width: 100%; /* Memperlebar teks untuk memenuhi lebar */
+        text-align: center; /* Menjaga teks tetap di tengah */
+    }
+
+    .image-content {
+        display: flex; /* Menggunakan flexbox untuk gambar */
+        /* flex-direction: column; Mengatur gambar vertikal */
+        align-items: center; /* Menjaga gambar terpusat */
+        gap: 15px; /* Memberikan jarak antar gambar */
+    }
+
+    .image-content img {
+        width: 280px; /* Menyesuaikan ukuran gambar */
+        height: 380px; /* Menyesuaikan proporsi gambar */
+    }
+}
+
+
+/* Media Query untuk Surface Pro 7 */
+@media (min-width: 912px) and (max-width: 1368px) {
+    .tasty-food-section {
+        flex-direction: row; /* Tetap horizontal */
+        justify-content: space-between;
+        gap: 20px; /* Tambahkan jarak antar elemen */
+    }
+    .text-content {
+        margin-left: 0; /* Hilangkan margin negatif */
+        max-width: 50%; /* Teks lebih proporsional */
+    }
+
+    .image-content img {
+        width: 250px; /* Lebar gambar lebih besar */
+        height: 350px; /* Tinggi proporsional */
+    }
+}
+
 
 /* PART 2 */
 .Tasty-Food {
     background-color: #ffffff;
     padding: 20px;
-
 }
 
 .food-section {
@@ -797,12 +1046,13 @@ html {
     align-items: center;
     justify-content: space-between;
     flex-wrap: wrap; /* Menambahkan ini untuk memungkinkan elemen membungkus saat ruang terbatas */
-    margin-top: 100px;
+    margin-top: 50px;
+    margin-bottom: 50px;
 }
 
 .content-text {
     max-width: 600px;
-    margin-right: -50px;
+    margin-right: -10px;
     flex: 1; /* Menambahkan ini agar dapat beradaptasi dengan ukuran layar */
 }
 
@@ -810,11 +1060,11 @@ html {
     font-size: 2rem;
     font-weight: bold;
     margin-bottom: 15px;
-    margin-top: 20px;
+    margin-top: 15px;
 }
 
 .content-text p {
-    font-size: 1rem;
+    font-size: 0.9rem;
     line-height: 1.5;
     margin-bottom: 15px;
     font-weight: 510;
@@ -822,16 +1072,73 @@ html {
 
 .content-image {
     display: flex;
-    gap: 15px;
-    margin-left: -50px;
+    gap: 10px;
+    margin-left: -10px;
     flex-wrap: wrap; /* Menambahkan ini untuk memungkinkan gambar membungkus saat ruang terbatas */
 }
 
 .content-image img {
-    width: 270px;
-    height: 270px;
+    width: 240px;
+    height: 240px;
     border-radius: 15px;
     object-fit: cover;
+}
+
+/* Media Query untuk iPad Pro (12.9-inch) */
+@media (min-width: 1024px) and (max-width: 1366px) {
+    .food-section {
+        flex-direction: row; /* Tetap berbaris */
+        justify-content: space-between; /* Membagi ruang secara seimbang */
+        gap: 20px; /* Memberi jarak antar elemen */
+    }
+
+    .content-text {
+        max-width: 50%; /* Batasi teks agar tidak terlalu lebar */
+        margin-right: 10px; /* Memberi sedikit margin kanan */
+    }
+
+    .content-image img {
+        width: 280px; /* Menyesuaikan ukuran gambar */
+        height: 280px; /* Menyesuaikan proporsi gambar */
+    }
+}
+
+/* Media Query untuk iPad Air (10.9-inch) */
+@media (min-width: 820px) and (max-width: 1180px) {
+    .food-section {
+        flex-direction: column; /* Tetap berbaris */
+        justify-content: space-between;
+        gap: 15px; /* Memberi jarak antar elemen */
+    }
+
+    .content-text {
+        margin-left: 0; /* Menghapus margin kiri negatif */
+        max-width: 100%; /* Memperlebar teks untuk memenuhi lebar */
+        text-align: center; /* Menjaga teks tetap di tengah */
+    }
+    .content-image img {
+        width: 250px; /* Ukuran gambar sedikit lebih kecil */
+        height: 350px; /* Menyesuaikan ukuran gambar */
+    }
+}
+
+/* Media Query untuk Surface Pro 7 (12.3-inch) */
+@media (min-width: 900px) and (max-width: 1400px) {
+    .food-section {
+        flex-direction: row; /* Tetap berbaris */
+        justify-content: space-between;
+        gap: 20px; /* Memberi jarak antar elemen */
+    }
+
+    .content-text {
+        max-width: 55%; /* Teks sedikit lebih lebar */
+        margin-right: 10px; /* Memberikan sedikit margin kanan */
+    }
+
+    .content-image img {
+        width: 270px; /* Menyesuaikan ukuran gambar */
+        height: 270px; /* Menyesuaikan proporsi gambar */
+    }
 }
 
 /* Media Query untuk tampilan lebih kecil */
@@ -845,24 +1152,63 @@ html {
         max-width: 100%; /* Memperlebar lebar konten teks */
         margin-right: 0; /* Menghapus margin kanan */
         margin-bottom: 20px; /* Tambahkan margin bawah untuk jarak antar elemen */
+        text-align: center; /* Menjaga teks tetap di tengah */
+
     }
 
     .content-image {
         justify-content: center; /* Mengatur gambar ke tengah */
+        margin: 80px;
+        gap: 15px;
     }
 
     .content-image img {
         width: 100%; /* Mengatur gambar agar responsif */
         height: auto; /* Membiarkan tinggi menyesuaikan proporsi */
-        max-width: 270px; /* Menjaga ukuran maksimum agar tidak terlalu besar */
+        max-width: 275px; /* Menjaga ukuran maksimum agar tidak terlalu besar */
     }
 }
+/* Media Query untuk tampilan mobile (lebar 480px atau lebih kecil) */
+@media (max-width: 480px) {
+    .food-section {
+        flex-direction: column; /* Mengubah layout menjadi kolom pada layar kecil */
+        align-items: center; /* Mengatur elemen agar terpusat */
+        gap: 10px; /* Mengurangi jarak antar elemen */
+    }
+
+    .content-text {
+        max-width: 100%; /* Memperlebar teks untuk menyesuaikan lebar layar */
+        margin-right: 0; /* Menghapus margin kanan */
+        margin-left: 0; /* Menghapus margin kiri */
+        padding: 10px; /* Memberi sedikit padding agar tidak terlalu mepet ke tepi */
+        text-align: center; /* Menjaga teks agar tetap di tengah */
+    }
+
+    .content-image {
+        display: flex;
+        justify-content: center !important; /* Menyelaraskan gambar ke tengah secara horizontal */
+        align-items: center !important; /* Menyelaraskan gambar ke tengah secara vertikal */
+        width: 110%; /* Agar kontainer gambar memiliki lebar penuh */
+        /* margin: 10px; */
+    }
+
+    .content-image img {
+        width: 290px !important;  /* Set width sama untuk kedua gambar */
+        height: 390px; /* Menyamakan tinggi gambar */
+        object-fit: cover; /* Memastikan gambar tetap terpotong dengan proporsional */
+        margin: 0 auto; /* Mengatur gambar agar berada di tengah secara horizontal */
+        display: block; /* Menghilangkan jarak bawah yang biasanya muncul pada gambar */
+    }
+}
+
+
+
+
 
 /* PART 3 */
 .Food {
     background-color: #ffffff;
     padding: 20px;
-
 }
 
 .tasty-section {
@@ -871,12 +1217,13 @@ html {
     margin: 250px auto;
     align-items: center;
     justify-content: space-between;
-    margin-top: -150px;
+    margin-top: 50px;
+    margin-bottom: 50px;
 }
 
 .content-text-misi {
     max-width: 600px;
-    margin-left: -50px;
+    margin-left: -10px;
 }
 
 .content-text-misi h3 {
@@ -886,7 +1233,7 @@ html {
 }
 
 .content-text-misi p {
-    font-size: 1rem;
+    font-size: 0.9rem;
     line-height: 1.5;
     margin-bottom: 15px;
     font-weight: 510;
@@ -894,57 +1241,129 @@ html {
 
 .image-content-misi {
     display: flex;
-    gap: 5px;
-    margin-right: -50px;
+    /* gap: 5px; */
+    margin-right: -10px;
 }
 
 .image-content-misi img {
-    width: 600px;
-    height: 290px;
+    width: 500px !important;
+    height: 250px !important;
     border-radius: 15px;
     object-fit: cover;
 
 }
-
-/* Responsive Media Queries */
-@media (max-width: 768px) {
-    .tasty-food-section, .food-section, .tasty-section {
-        flex-direction: column;
+/* Media Query untuk iPad Pro (12.9-inch) */
+@media (min-width: 1024px) and (max-width: 1366px) {
+    .tasty-section {
+        flex-direction: row !important; /* Layout menjadi baris */
+        justify-content: space-between; /* Membagi ruang secara merata */
+        gap: 20px; /* Jarak antar elemen */
     }
 
-    .text-content, .content-text, .content-text-misi {
+    .content-text-misi {
+        max-width: 50%; /* Teks lebih sempit */
+    }
+
+    .image-content-misi img {
+        width: 450px; /* Ukuran gambar sedikit lebih besar */
+        height: 300px; /* Menyesuaikan proporsi */
+    }
+}
+
+/* Media Query untuk iPad Air (10.9-inch) */
+@media (min-width: 820px) and (max-width: 1180px) {
+    .tasty-section {
+        flex-direction: row; /* Layout menjadi baris */
+        justify-content: space-between;
+        gap: 15px; /* Jarak antar elemen */
+    }
+
+    .content-text-misi {
+        max-width: 55%; /* Lebar teks sedikit lebih besar */
+    }
+
+    .image-content-misi img {
+        width: 400px; /* Gambar sedikit lebih kecil */
+        height: 250px; /* Menyesuaikan proporsi */
+    }
+}
+
+/* Media Query untuk Surface Pro 7 dan ukuran layar desktop lebih kecil dari 1024px */
+@media (max-width: 1024px) {
+    .tasty-section {
+        flex-direction: column; /* Layout menjadi kolom */
+        align-items: center; /* Menjaga konten tetap terpusat */
+        gap: 20px; /* Jarak antar elemen */
+    }
+
+    .content-text-misi {
+        margin-left: 0;
+        margin-right: 0;
+        max-width: 100%;
+        text-align: center; /* Memastikan teks tetap di tengah */
+    }
+
+    .image-content-misi img {
+        width: 100%; /* Gambar menjadi responsif */
+        height: auto; /* Menyesuaikan dengan proporsi gambar */
+    }
+}
+
+/* Media Query untuk tampilan lebih kecil (Mobile) */
+@media (max-width: 768px) {
+    .tasty-section {
+        flex-direction: column; /* Layout menjadi kolom */
+        align-items: center;
+    }
+
+    .content-text-misi {
         margin-left: 0;
         margin-right: 0;
         text-align: center;
-        max-width: 100%;
+        max-width: 100%; /* Mengatur lebar teks menjadi penuh */
     }
 
-    .image-content, .content-image, .image-content-misi {
-        margin: 0;
-    }
-
-    .image-content img, .content-image img, .image-content-misi img {
-        width: 100%;
-        height: auto;
+    .image-content-misi img {
+        width: 560px !important; /* Membuat gambar responsif */
+        height: auto; /* Menyesuaikan dengan proporsi gambar */
     }
 }
 
+/* Media Query untuk tampilan sangat kecil (misalnya pada handphone kecil) */
 @media (max-width: 480px) {
-    .text-content h3, .content-text h3, .content-text-misi h3 {
-        font-size: 1.5rem;
+    .content-text-misi h3 {
+        font-size: 1.5rem; /* Mengurangi ukuran judul */
     }
 
-    .text-content p, .content-text p, .content-text-misi p {
-        font-size: 0.8rem;
+    .content-text-misi p {
+        font-size: 0.8rem; /* Mengurangi ukuran teks */
     }
 
-    .image-content img, .content-image img, .image-content-misi img {
-        width: 100%;
-        height: auto;
+    .image-content-misi img {
+        width: 280px !important;
+        height: 200px !important; /* Membiarkan tinggi mengikuti proporsi */
     }
 }
+
+
+
 
 /* BERITA */
+.pagination .page-link {
+    color: black !important; /* Change link color */
+}
+
+.pagination .page-link:hover {
+    color: black; /* Change hover color */
+    background-color: #f0f0f0; /* Optional: Adjust hover background color */
+}
+
+.pagination .active .page-link {
+    background-color: black !important; /* Active page background color */
+    color: white !important; /* Active page text color */
+    border-color: black !important; /* Active page border color */
+}
+
 .news-tasty {
     background-color: #f4f4f4;
     padding: 20px;
@@ -962,7 +1381,7 @@ html {
 
 .text-content-news {
     max-width: 600px;
-    margin-right: -50px;
+    margin-right: -10px;
 }
 
 .text-content-news h3 {
@@ -980,13 +1399,13 @@ html {
 
 .image-content-news {
     display: flex;
-    margin-left: -50px;
+    margin-left: -10px;
 }
 
 .image-content-news img {
-    width: 550px;
+    width: 450px;
     max-width: 100%;
-    height: 550px;
+    height: 450px;
     border-radius: 25px;
     object-fit: cover;
 }
@@ -1029,66 +1448,171 @@ html {
 }
 
 /* Responsive Media Queries */
+
+/* Responsif untuk layar ponsel */
+@media (max-width: 480px) {
+    .text-content-news h3 {
+        font-size: 1.3rem;
+        margin-top: 15px;
+    }
+    .text-content-news {
+        max-width: 100% !important;
+        margin-left: -150px !important;
+        margin-right: -150px !important;
+        margin-top: 50px !important;
+        padding: 0 20px !important;
+    }
+
+
+    .text-content-news p {
+        font-size: 0.70rem;
+        margin-bottom:  30px;
+    }
+
+    .btn-black {
+        padding: 10px 20px;
+        font-size: 14px;
+        margin-bottom: -100px !important;
+    }
+
+    .tasty-food-section-news {
+        margin-top: 10px;
+        max-width: 100%;
+        padding: 0 15px;
+    }
+    .image-content-news img {
+        width: 94% !important;
+        height: auto !important;
+        margin: auto;
+    }
+
+}
+
+/* Media query untuk iPad Mini (768px) */
 @media (max-width: 768px) {
     .news-tasty-section {
         flex-direction: column;
         align-items: center;
-        gap: 20px;
+        max-width: 100%;
+        margin-top: 50px;
     }
 
     .text-content-news {
-        margin-right: 0;
-        text-align: center;
         max-width: 100%;
-    }
-
-    .image-content-news {
-        margin-left: 0;
-        justify-content: center;
-    }
-
-    .image-content-news img {
-        width: 100%;
-        max-width: 450px;
-        height: auto;
-    }
-
-    .black-line {
-        width: 20%;
-    }
-
-    .btn-black {
-        width: auto; /* Menghapus lebar tetap */
-        max-width: 300px;
-        margin: 20px auto; /* Pastikan tombol di tengah */
-    }
-}
-
-@media (max-width: 480px) {
-    .text-content-news h3 {
-        font-size: 1.5rem;
+        margin-left: -150px;
+        margin-right: -150px;
+        margin-top: 50px;
+        padding: 0 30px;
     }
 
     .text-content-news p {
-        font-size: 0.9rem;
-    }
-
-    .image-content-news img {
-        width: 100%;
-        max-width: 300px;
-        height: auto;
-    }
-
-    .black-line {
-        width: 30%;
+        font-size: 1rem;
+        margin-right: -5px;
     }
 
     .btn-black {
-        width: auto;
-        max-width: 250px;
-        margin: 20px auto; /* Memastikan tombol di tengah pada layar kecil */
+        width: 100%;
+        margin: 10px 0;
+        display: flex; /* Aktifkan Flexbox */
+        justify-content: center; /* Pusatkan teks secara horizontal */
+        align-items: center; /* Pusatkan teks secara vertikal */
+    }
+
+
+    .image-content-news {
+        margin: 20px 0 0 0;
+    }
+
+    .image-content-news img {
+        width: 670px;
+        height: 670px;
+        margin: auto;
     }
 }
+
+
+/* Media query untuk iPad Air dan iPad Pro (810px hingga 1024px) */
+@media (min-width: 810px) and (max-width: 1024px) {
+    .news-tasty-section{
+        flex-direction: row;
+        justify-content: space-around;
+        max-width: 100%;
+        margin-top: 50px;
+    }
+
+    .text-content-news {
+        max-width: 450px;
+        margin-right: -30px;
+        margin-top: 15px;
+        padding: 0 50px;
+
+    }
+
+    .text-content-news h3 {
+        font-size: 1.75rem;
+        margin-left: -5px;
+    }
+    .text-content-news p {
+        font-size: 1rem;
+        margin-left: -5px;
+        margin-bottom: -5px;
+    }
+
+    .btn-black {
+        width: 80%;
+        margin: 20px 0;
+    }
+
+    .image-content-news {
+        margin-left: 20px;
+        margin-top: 0;
+    }
+
+    .image-content-news img {
+        width: 660px;
+        height: 500px;
+    }
+}
+@media (max-width: 720px) and (min-width: 540px) {
+    .news-tasty-section {
+        flex-direction: column;
+        align-items: center;
+        max-width: 100%;
+        margin-top: 30px;
+    }
+
+    .text-content-news {
+        max-width: 90%;
+        margin: 0 auto;
+        padding: 0 20px;
+
+    }
+
+    .text-content-news h3 {
+        font-size: 1.5rem;
+        margin-top: 10px;
+    }
+
+    .text-content-news p {
+        font-size: 0.85rem;
+        margin-bottom: 15px;
+    }
+
+    .btn-black {
+        width: 100%;
+        padding: 8px 15px;
+        font-size: 13px;
+        margin-bottom: 20px;
+    }
+
+    .image-content-news img {
+        width: 410px !important;
+        height: 500px;
+        margin: auto;
+        margin-bottom: 50px !important;
+    }
+}
+
 
 .news {
     display: grid;
@@ -1098,8 +1622,8 @@ html {
    }
 
 .container-news{
-    padding-left: 6rem;
-    padding-right: 6rem;
+    padding-left: 3.5rem;
+    padding-right: 3.5rem;
     margin-top: 1rem;
 }
 
@@ -1176,6 +1700,7 @@ html {
     display: inline-block;
     text-decoration: none;
     margin-top: 50px;
+    margin-left: -15px;
 }
 
 .read-more::after {
@@ -1193,6 +1718,75 @@ html {
     width: 100%;
     left: 0;
 }
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+    .container-news {
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+
+    .news-card {
+        margin-bottom: 1.5rem; /* Add space between cards on smaller screens */
+    }
+
+    .read-more {
+        margin-top: 1rem; /* Reduce margin for better spacing */
+        margin-left: -15px;
+    }
+}
+
+@media (max-width: 768px) {
+    .news {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .container-news {
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+
+    .news-card {
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .news-title {
+        font-size: 1.2rem;
+    }
+
+    .news-text {
+        font-size: 0.9rem;
+    }
+    .read-more {
+        font-size: 0.9rem;
+       margin-left: -10px;
+}
+}
+
+@media (max-width: 576px) {
+    .news {
+        margin-top: -100px; /* Adjust margin for smaller screens */
+    }
+
+    .aspect-ratio {
+        padding-bottom: 75%; /* Adjust for a different aspect ratio on smaller screens */
+    }
+
+    .news-title {
+        font-size: 1rem;
+    }
+
+    .news-text {
+        font-size: 0.8rem;
+    }
+
+    .read-more {
+        font-size: 0.9rem;
+    }
+}
+
 
 /* LOAD */
 .loading {
@@ -1200,15 +1794,104 @@ html {
     font-size: 18px;
     padding: 20px;
 }
+/* DETAIL BERITA */
+/* Main container styling */
+.Food-Berita {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    background-color: #f8f9fa;
+}
+
+.berita-section {
+    display: flex;
+    flex-direction: row;
+    max-width: 800px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 100%;
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+
+.berita-section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Image styling */
+.image-content-berita {
+    flex: 1;
+    min-width: 150px;
+}
+
+.image-content-berita img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+
+/* Text content styling */
+.content-text-berita {
+    flex: 2;
+    padding: 20px;
+    color: #333;
+}
+
+.content-text-berita h3 {
+    font-size: 1.6rem;
+    margin-bottom: 10px;
+    color: #000000;
+    font-weight: 600;
+}
+
+.content-text-berita .paragraph {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+.content-text-berita hr {
+    border: none;
+    border-top: 1px solid #ddd;
+    margin: 10px 0;
+}
+
+.news-date {
+    color: #888;
+    font-size: 0.9rem;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .berita-section {
+        flex-direction: column;
+    }
+
+    .image-content-berita,
+    .content-text-berita {
+        flex: none;
+    }
+
+    .image-content-berita img {
+        border-radius: 12px 12px 0 0;
+    }
+}
+
 
 /* FOOTER */
-.body-footer {
-    background-color: #111;
-    color: #fff;
-    font-family: 'Sans Serif', sans-serif;
-}
 .footer {
-    padding: 40px 0;
+    padding: 5rem;
+    /* margin-top: 3rem; */
+    background-color: #000000;
+    color: #f4f4f4;
+    margin-left: -10px;
 }
 .footer h5 {
     font-weight: bold;
@@ -1217,17 +1900,17 @@ html {
 .footer p {
     color: #b5b5b5;
 }
+
+.custom-paragraph {
+    padding-right: 190px;
+}
+
 .footer a {
-    color: #fff;
+    color: #ffffff;
     text-decoration: none;
-    display: block;
-    margin-bottom: 10px;
 }
 .footer a:hover {
     text-decoration: underline;
-}
-.social-icons {
-    text-align: left;
 }
 .social-icons a {
     display: inline-block;
@@ -1236,30 +1919,58 @@ html {
     line-height: 40px;
     margin-right: 10px;
     text-align: center;
+    color: #ffffff;
     border-radius: 50%;
-    background-color: #333;
-    color: #fff;
-}
-.social-icons a:hover {
-    background-color: #555;
-}
-.social-icons .fa-facebook {
     background-color: #3b5998;
 }
-.social-icons .fa-twitter {
+.social-icons a.twitter {
     background-color: #1da1f2;
+}
+.social-icons a i {
+    font-size: 20px;
 }
 .footer-bottom {
     text-align: center;
-    padding: 20px 0;
+    padding-top: 20px;
     margin-top: 20px;
 }
 .contact-info li {
+    display: flex;
+    align-items: center;
     margin-bottom: 10px;
+    font-weight: 700;
+    font-size: small;
+    margin-left: -10px;
 }
-.contact-info i {
+.contact-info li i {
     margin-right: 10px;
 }
+.list-unstyled li {
+    margin-bottom: 10px;
+    font-weight: 700;
+    font-size: small;
+}
 
+.botten {
+    display: grid;
+    place-items: center; /* Menengahkan item secara horizontal dan vertikal */
+    /* height: 100vh; Mengatur tinggi kontainer ke 100% viewport */
+    padding-bottom: 25px;
+}
 
-
+.btn-more {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #000;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    text-transform: uppercase;
+    font-weight: bold;
+    text-decoration: none;
+}
+.btn-more:hover {
+    background-color: #555; /* Change to a lighter shade */
+    color: #fff; /* Maintain text color */
+    transition: background-color 0.3s; /* Smooth transition */
+}

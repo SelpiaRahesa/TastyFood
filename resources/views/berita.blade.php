@@ -1,31 +1,27 @@
 @extends('layouts.user')
 @section('content')
     <div class="content-title">
-        <h1>BERITA KAMI</h1>
+        <h2>BERITA KAMI</h2>
     </div>
     <section class="news-tasty">
+        @php $berita = App\Models\Berita::where('id', 24)->first(); @endphp
+        @if ($berita)
         <div class="news-tasty-section">
             <div class="image-content-news">
-                <img src="{{ asset('assets/frontend/eiliv-aceron-ZuIDLSz3XLg-unsplash.jpg') }}" alt="Tasty Food 1"
+                <img src="{{ asset('/storage/beritas/' . $berita->image) }}" alt="Tasty Food 1"
                     loading="lazy">
             </div>
 
             <div class="text-content-news">
-                <h3>APA SAJA MAKANAN KHAS NUSANTARA?</h3>
+                <h3>{{ $berita->judul }}</h3>
+                <p class="paragraph">{{ $berita->deskripsi }}</p>
                 <br>
-                <p class="paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ornare, augue eu
-                    rutrum
-                    commodo, dui diam convallis arcu, eget consectetur ex sem eget lacus. Nullam vitae dignissim neque, vel
-                    luctus ex. Fusce sit amet viverra ante.</p>
-                <br>
-                <p class="paragraph2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ornare, augue eu
-                    rutrum
-                    commodo, dui diam convallis arcu, eget consectetur ex sem eget lacus. Nullam vitae dignissim neque, vel
-                    luctus ex. Fusce sit amet viverra ante.</p>
-                <br>
-                <a href="#" class="btn-black">BACA SELENGKAPNYA</a>
+                <p class="paragraph2">{{ $berita->deskripsi }}</p>
+            
+                <a href="{{ url('detailBerita', $berita->id) }}" class="btn-black">BACA SELENGKAPNYA</a>
             </div>
         </div>
+        @endif
     </section>
     <section class="content-news">
         <div class="news p-3">
@@ -43,9 +39,12 @@
                                 </div>
                                 <div class="news-body">
                                     <h5 class="news-title">{{ $data->judul }}</h5>
-                                    <p class="news-text">{{ $data->deskripsi }}
+                                    <p class="news-text"><span class="message-preview" onclick="toggleMessage(this)"
+                                        data-full-message="{{ $data->deskripsi }}">
+                                      {{ \Illuminate\Support\Str::limit($data->deskripsi, 50, '...') }}
+                                  </span>
                                     </p>
-                                    <a href="#" class="btn btn-link text-warning read-more">Baca selengkapnya</a>
+                                    <a href="{{ url('detailBerita', $data->id) }}" class="btn btn-link text-warning read-more">Baca selengkapnya</a>
                                 </div>
                             </div>
                         </div>

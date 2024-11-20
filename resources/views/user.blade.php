@@ -42,7 +42,9 @@
     {{-- BERITA --}}
     <section class="content-news">
         <div class="news p-3">
-            <h2 style="'Poppins', 'sans-serif'" class="m-3"><b>BERITA KAMI</b></h2>
+            <div class="berita-title">
+                <h3 class="mb-3 text-center"><b>BERITA KAMI</b>
+            </div>
             <div class="container-news">
                 <div class="row">
                     <div class="col-md-6">
@@ -56,7 +58,7 @@
                             <div class="news-body mb-5">
                                 <h5 class="news-title mb-4">{{ $berita->judul }}</h5>
                                 <p class="news-content mb-5">{{ $berita->deskripsi }}</p>
-                                <a href="#" class="btn btn-link text-warning read-more">Baca selengkapnya</a>
+                                <a href="{{ url('detailBerita', $berita->id) }}" class="btn btn-link text-warning read-more">Baca selengkapnya</a>
                             </div>
                         </div>
                         @endif
@@ -75,7 +77,7 @@
                                     <div class="news-body">
                                         <h5 class="news-title">{{ $berita->judul }}</h5>
                                         <p class="news-text">{{ $berita->deskripsi }}</p>
-                                        <a href="#" class="btn btn-link text-warning read-more">Baca selengkapnya</a>
+                                        <a href="{{ url('detailBerita', $berita->id) }}" class="btn btn-link text-warning read-more">Baca selengkapnya</a>
                                     </div>
                                 </div>
                                 @endif
@@ -92,7 +94,7 @@
                                     <div class="news-body">
                                         <h5 class="news-title">{{ $berita->judul }}</h5>
                                         <p class="news-text">{{ $berita->deskripsi }}</p>
-                                        <a href="#" class="btn btn-link text-warning read-more">Baca selengkapnya</a>
+                                        <a href="{{ url('detailBerita', $berita->id) }}" class="btn btn-link text-warning read-more">Baca selengkapnya</a>
                                     </div>
                                 </div>
                                 @endif
@@ -109,7 +111,7 @@
                                     <div class="news-body">
                                         <h5 class="news-title">{{ $berita->judul }}</h5>
                                         <p class="news-text">{{ $berita->deskripsi }}</p>
-                                        <a href="#" class="btn btn-link text-warning read-more">Baca selengkapnya</a>
+                                        <a href="{{ url('detailBerita', $berita->id) }}" class="btn btn-link text-warning read-more">Baca selengkapnya</a>
                                     </div>
                                 </div>
                                 @endif
@@ -126,7 +128,7 @@
                                     <div class="news-body">
                                         <h5 class="news-title">{{ $berita->judul }}</h5>
                                         <p class="news-text">{{ $berita->deskripsi }}</p>
-                                        <a href="#" class="btn btn-link text-warning read-more">Baca selengkapnya</a>
+                                        <a href="{{ url('detailBerita', $berita->id) }}" class="btn btn-link text-warning read-more">Baca selengkapnya</a>
                                     </div>
                                 </div>
                                 @endif
@@ -149,7 +151,7 @@
             <div class="row galeri">
                 @php $galery = App\Models\Galery::orderBy('id', 'asc')->get(); @endphp
                 @foreach ($galery->take(6) as $data)
-                    <div class="col-10 col-sm-4 col-md-3">
+                    <div class="col-10 col-sm-4 col-md-3 g-0">
                         <div class="image-container">
                             <img src="{{ asset('/storage/galeries/' . $data->image) }}"
                                 class="rounded img-fluid image-shadow">

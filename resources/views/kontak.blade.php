@@ -1,13 +1,13 @@
 @extends('layouts.user')
 @section('content')
     <div class="content-title">
-        <h1>KONTAK KAMI</h1>
+        <h2>KONTAK KAMI</h2>
     </div>
     <!-- Contact Form Section -->
     <div class="contact-form-section">
         <div class="container">
             <h3><b>KONTAK KAMI</b></h3>
-            <form action="{{ route('message.store') }}" method="POST" enctype="multipart/form-data">
+            <form action="{{ route('user.message.store') }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="row">
                     <div class="col-lg-6">

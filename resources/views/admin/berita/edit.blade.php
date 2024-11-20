@@ -41,9 +41,17 @@
                             @enderror
                         </div>
                         <div class="mb-3">
-                            <label class="form-label">Image</label>
-                            <input type="file" class="form-control @error('image') is-invalid @enderror" name="image"
-                                value="{{ old('berita', $berita->image) }}" placeholder="Deskripsi" required>
+                            <label class="form-label"> Image</label>
+                            @if ($berita->image)
+                                <!-- Display current image at the top -->
+                                <div class="mb-2">
+                                    <img src="{{ asset('storage/beritas/' . $berita->image) }}" alt="Current Image" class="img-fluid" width="150">
+                                </div>
+                            @endif
+
+                            <label class="form-label">Update Image</label>
+                            <input type="file" class="form-control @error('image') is-invalid @enderror" name="image" value="{{ old('image') }}">
+
                             @error('image')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>

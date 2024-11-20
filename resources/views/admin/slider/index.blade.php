@@ -33,7 +33,7 @@
                                 <td>{{ $no++ }}</td>
                                     <td>
                                         <img src="{{ asset('/storage/sliders/' . $data->image) }}" class="rounded"
-                                            style="width: 150px">
+                                        style="width: 150px; height: 150px; object-fit: cover;">
                                     </td>
                                     <td>
                                         <form action="{{route('slider.destroy', $data->id)}}" method="POST">

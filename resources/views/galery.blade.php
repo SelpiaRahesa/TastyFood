@@ -1,7 +1,7 @@
 @extends('layouts.user')
 @section('content')
     <div class="content-title">
-        <h1>GALERY KAMI</h1>
+        <h2>GALERY KAMI</h2>
     </div>
     <!-- Carousel -->
     @php $slider = App\Models\Slider::orderBy('id', 'asc')->get(); @endphp

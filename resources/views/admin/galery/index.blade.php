@@ -30,10 +30,9 @@
                                 @php $no = 1; @endphp
                                 @forelse ($galery as $data)
                                 <tr>
-                                <td>{{ $no++ }}</td>
+                                    <td>{{ $no++ }}</td>
                                     <td>
-                                        <img src="{{ asset('/storage/galeries/' . $data->image) }}" class="rounded"
-                                            style="width: 150px">
+                                        <img src="{{ asset('/storage/galeries/' . $data->image) }}" class="img-thumbnail" style="width: 150px; height: 150px; object-fit: cover;">
                                     </td>
                                     <td>
                                         <form action="{{route('galery.destroy', $data->id)}}" method="POST">
@@ -42,9 +41,8 @@
                                             <a href="{{route('galery.edit', $data->id)}}" class="btn btn-sm btn-warning">
                                                 Edit
                                             </a>
-                                            {{-- <a href="{{ route('galery.destroy', $data->id) }}" class="btn  btn-sm btn-danger" data-confirm-delete="true">Delete</a> --}}
                                             <a href="{{route('galery.destroy', $data->id)}}" class="btn btn-sm btn-danger" data-confirm-delete="true">
-                                                delete
+                                                Delete
                                             </a>
                                         </form>
                                     </td>

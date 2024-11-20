@@ -41,20 +41,36 @@
                             @enderror
                         </div>
                         <div class="mb-3">
-                            <label class="form-label">Image 1</label>
-                            <input type="file" class="form-control @error('image1') is-invalid @enderror" name="image1"
-                                value="{{ old('tentang', $tentang->image1) }}" placeholder="Deskripsi" required>
-                            @error('image1')
+                            <label class="form-label"> Image</label>
+                            @if ($tentang->image1)
+                                <!-- Display current image at the top -->
+                                <div class="mb-2">
+                                    <img src="{{ asset('storage/tentangs/' . $tentang->image1) }}" alt="Current Image" class="img-fluid" width="150">
+                                </div>
+                            @endif
+
+                            <label class="form-label">Update Image 1</label>
+                            <input type="file" class="form-control @error('image') is-invalid @enderror" name="image" value="{{ old('image') }}">
+
+                            @error('image')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
                             </span>
                             @enderror
                         </div>
                         <div class="mb-3">
-                            <label class="form-label">Image 2</label>
-                            <input type="file" class="form-control @error('image2') is-invalid @enderror" name="image2"
-                                value="{{ old('tentang', $tentang->image2) }}" placeholder="Deskripsi" required>
-                            @error('image2')
+                            <label class="form-label"> Image</label>
+                            @if ($tentang->image2)
+                                <!-- Display current image at the top -->
+                                <div class="mb-2">
+                                    <img src="{{ asset('storage/tentangs/' . $tentang->image2) }}" alt="Current Image" class="img-fluid" width="150">
+                                </div>
+                            @endif
+
+                            <label class="form-label">Update Image 2</label>
+                            <input type="file" class="form-control @error('image') is-invalid @enderror" name="image" value="{{ old('image') }}">
+
+                            @error('image')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
                             </span>

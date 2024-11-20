@@ -21,15 +21,24 @@
                         @csrf
                         @method('put')
                         <div class="mb-3">
-                            <label class="form-label">Image</label>
-                            <input type="file" class="form-control @error('image') is-invalid @enderror" name="image"
-                                value="{{ old('image') }}" required></input>
+                            <label class="form-label"> Image</label>
+                            @if ($slider->image)
+                                <!-- Display current image at the top -->
+                                <div class="mb-2">
+                                    <img src="{{ asset('storage/sliders/' . $slider->image) }}" alt="Current Image" class="img-fluid" width="150">
+                                </div>
+                            @endif
+
+                            <label class="form-label">Update Image</label>
+                            <input type="file" class="form-control @error('image') is-invalid @enderror" name="image" value="{{ old('image') }}">
+
                             @error('image')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
                             </span>
                             @enderror
-                        </div><div>
+                        </div>
+                        <div>
 
                         <button type="submit" class="btn btn-sm btn-primary">Send</button>
                         <button type="reset" class="btn btn-sm btn-warning">Reset</button>

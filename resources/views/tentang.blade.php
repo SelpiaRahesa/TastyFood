@@ -1,10 +1,10 @@
 @extends('layouts.user')
 @section('content')
     <div class="content-title">
-        <h1>TENTANG KAMI</h1>
+        <h2>TENTANG KAMI</h2>
     </div>
     <section class="tastyFood">
-        @php $tentang = App\Models\Tentang::where('id', 7)->first(); @endphp
+        @php $tentang = App\Models\Tentang::where('id', 11)->first(); @endphp
         @if ($tentang)
             <div class="tasty-food-section">
                 <div class="text-content">
@@ -40,13 +40,14 @@
         @php $tentang = App\Models\Tentang::where('id', 9)->first(); @endphp
         @if ($tentang)
             <div class="tasty-section">
-                <div class="content-text-misi">
+                <div class="image-content-misi order-md-2">
+                    <img src="{{ asset('/storage/tentangs/' . $tentang->image1) }}" alt="Tasty Food 1" loading="lazy">
+                </div>
+                <div class="content-text-misi order-md-1">
                     <h3>{{ $tentang->judul }}</h3>
                     <p class="paragraph">{{ $tentang->deskripsi }}</p>
                 </div>
-                <div class="image-content-misi">
-                    <img src="{{ asset('/storage/tentangs/' . $tentang->image1) }}" alt="Tasty Food 1" loading="lazy">
-                </div>
+
             </div>
         @endif
     </section>

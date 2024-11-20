@@ -1,4 +1,4 @@
-{{-- @extends('layouts.admin')
+@extends('layouts.admin')
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
@@ -23,7 +23,7 @@
                         @csrf
                         <div class="mb-3">
                             <label class="form-label">No Telepon</label>
-                            <input type="number" class="form-control @error('no telepon') is-invalid @enderror" name="no_telepon"
+                            <input type="number" class="form-control @error('no_telepon') is-invalid @enderror" name="no_telepon"
                                 value="{{ old('no_telepon') }}" placeholder="No Telepon" required>
                             @error('no_telepon')
                             <span class="invalid-feedback" role="alert">
@@ -61,4 +61,4 @@
         </div>
     </div>
 </div>
-@endsection --}}
+@endsection
