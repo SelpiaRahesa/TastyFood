@@ -14,30 +14,30 @@
     </div>
 
     {{-- END ABOUT --}}
-    {{-- GALERY --}}
-<div class="gallery">
-    <div class="card md-3 mb-4">
-        <img class="card-image" src="{{ asset('assets/frontend/img-1.png') }}" alt="Image 1">
-        <h2 class="card1 mb-3"><b>LOREM IPSUM</b></h2>
-        <p class="mb-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ornare, augue eu rutrum commodo.</p>
-    </div>
-    <div class="card md-3 mb-4">
-        <img class="card-image" src="{{ asset('assets/frontend/img-2.png') }}" alt="Image 2">
-        <h2 class="card1 mb-3"><b>LOREM IPSUM</b></h2>
-        <p class="mb-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ornare, augue eu rutrum commodo.</p>
-    </div>
-    <div class="card md-3 mb-4">
-        <img class="card-image" src="{{ asset('assets/frontend/img-3.png') }}" alt="Image 3">
-        <h2 class="card1 mb-3"><b>LOREM IPSUM</b></h2>
-        <p class="mb-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ornare, augue eu rutrum commodo.</p>
-    </div>
-    <div class="card md-3 mb-4">
-        <img class="card-image" src="{{ asset('assets/frontend/img-4.png') }}" alt="Image 4">
-        <h2 class="card1 mb-3"><b>LOREM IPSUM</b></h2>
-        <p class="mb-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ornare, augue eu rutrum commodo.</p>
-    </div>
-</div>
-{{-- END GALERY --}}
+                    {{-- GALERY --}}
+                <div class="gallery">
+                    <div class="card md-3 mb-4">
+                        <img class="card-image" src="{{ asset('assets/frontend/img-1.png') }}" alt="Image 1">
+                        <h2 class="card1 mb-3"><b>LOREM IPSUM</b></h2>
+                        <p class="mb-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ornare, augue eu rutrum commodo.</p>
+                    </div>
+                    <div class="card md-3 mb-4">
+                        <img class="card-image" src="{{ asset('assets/frontend/img-2.png') }}" alt="Image 2">
+                        <h2 class="card1 mb-3"><b>LOREM IPSUM</b></h2>
+                        <p class="mb-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ornare, augue eu rutrum commodo.</p>
+                    </div>
+                    <div class="card md-3 mb-4">
+                        <img class="card-image" src="{{ asset('assets/frontend/img-3.png') }}" alt="Image 3">
+                        <h2 class="card1 mb-3"><b>LOREM IPSUM</b></h2>
+                        <p class="mb-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ornare, augue eu rutrum commodo.</p>
+                    </div>
+                    <div class="card md-3 mb-4">
+                        <img class="card-image" src="{{ asset('assets/frontend/img-4.png') }}" alt="Image 4">
+                        <h2 class="card1 mb-3"><b>LOREM IPSUM</b></h2>
+                        <p class="mb-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ornare, augue eu rutrum commodo.</p>
+                    </div>
+                </div>
+                {{-- END GALERY --}}
 
     {{-- BERITA --}}
     <section class="content-news">

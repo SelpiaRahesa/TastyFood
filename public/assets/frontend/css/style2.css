@@ -1032,7 +1032,6 @@ html {
     }
 }
 
-
 /* PART 2 */
 .Tasty-Food {
     background-color: #ffffff;
@@ -1185,21 +1184,19 @@ html {
     }
 
     .content-image {
-        display: flex;
-        justify-content: center !important; /* Menyelaraskan gambar ke tengah secara horizontal */
-        align-items: center !important; /* Menyelaraskan gambar ke tengah secara vertikal */
-        width: 110%; /* Agar kontainer gambar memiliki lebar penuh */
-        /* margin: 10px; */
-    }
+        justify-content: center; /* Pusatkan gambar */
+        margin: 0 auto; /* Hapus margin kiri/kanan negatif */
+        gap: 10px; /* Kurangi jarak antar gambar */
+    } 
 
     .content-image img {
         width: 290px !important;  /* Set width sama untuk kedua gambar */
         height: 390px; /* Menyamakan tinggi gambar */
         object-fit: cover; /* Memastikan gambar tetap terpotong dengan proporsional */
-        margin: 0 auto; /* Mengatur gambar agar berada di tengah secara horizontal */
         display: block; /* Menghilangkan jarak bawah yang biasanya muncul pada gambar */
     }
 }
+
 
 
 
